@@ -2,15 +2,22 @@
 
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="time.js"></script>
     <title> Rainy Day - your daily news solution. </title>
 </head>
 
-<body>
+<body id="main" onload="ShowTime()">
+    <ul id="menu">
+        <li class="active"><a href="main.html"> Home </a></li>
+        <li class="passive"><a href="about.html"> About </a></li>
+        <li id="time"></li>
+    </ul>
+
     <h1 id="title"> Rainy Day </h1>
     <h3 id="subtitle"> Your daily news solution. </h3>
 
     <div align="center" vertical-align="middle">
-        <form>
+        <form action="search.html">
             <input type="text" id="keyword" name="keyword" placeholder="Type keyword">
 
             <select id="algorithm" name="algorithm">
@@ -19,7 +26,7 @@
                 <option value="Regex"> Regex </option>
             </select>
 
-            <button id="search" value="Search"><span> Search </span></button>
+            <button type="submit" id="search" value="submit"> Search </button>
         </form>
     </div>
 </body>
