@@ -1,0 +1,6 @@
+C:\Users\ASUS\Documents\Visual Studio 2017\Projects\GetNews\GetNews\bin\Debug\GetNews.exe.config
+C:\Users\ASUS\Documents\Visual Studio 2017\Projects\GetNews\GetNews\bin\Debug\GetNews.exe
+C:\Users\ASUS\Documents\Visual Studio 2017\Projects\GetNews\GetNews\bin\Debug\GetNews.pdb
+C:\Users\ASUS\Documents\Visual Studio 2017\Projects\GetNews\GetNews\obj\Debug\GetNews.csprojResolveAssemblyReference.cache
+C:\Users\ASUS\Documents\Visual Studio 2017\Projects\GetNews\GetNews\obj\Debug\GetNews.exe
+C:\Users\ASUS\Documents\Visual Studio 2017\Projects\GetNews\GetNews\obj\Debug\GetNews.pdb
