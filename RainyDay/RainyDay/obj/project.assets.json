@@ -9813,10 +9813,10 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\Documents\\Visual Studio 2017\\Projects\\RainyDay\\RainyDay\\RainyDay.csproj",
+      "projectUniqueName": "D:\\Reinhard\\ITB\\IF\\Semester 4\\Tubes\\Stima\\News Aggregator\\rainyday\\RainyDay\\RainyDay\\RainyDay.csproj",
       "projectName": "RainyDay",
-      "projectPath": "C:\\Users\\ASUS\\Documents\\Visual Studio 2017\\Projects\\RainyDay\\RainyDay\\RainyDay.csproj",
-      "outputPath": "C:\\Users\\ASUS\\Documents\\Visual Studio 2017\\Projects\\RainyDay\\RainyDay\\obj\\",
+      "projectPath": "D:\\Reinhard\\ITB\\IF\\Semester 4\\Tubes\\Stima\\News Aggregator\\rainyday\\RainyDay\\RainyDay\\RainyDay.csproj",
+      "outputPath": "D:\\Reinhard\\ITB\\IF\\Semester 4\\Tubes\\Stima\\News Aggregator\\rainyday\\RainyDay\\RainyDay\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"

@@ -47,11 +47,8 @@ namespace RainyDay
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            DefaultFilesOptions options = new DefaultFilesOptions();
-            options.DefaultFileNames.Clear();
-            options.DefaultFileNames.Add("main.html");
-            app.UseDefaultFiles(options);
             app.UseStaticFiles();
+            app.UseDefaultFiles();
 
             app.UseMvc(routes =>
             {

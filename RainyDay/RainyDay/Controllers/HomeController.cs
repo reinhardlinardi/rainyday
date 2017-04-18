@@ -8,27 +8,20 @@ namespace RainyDay.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index()
+        public IActionResult index()
         {
             return View();
         }
 
-        public IActionResult About()
+        public IActionResult about()
         {
-            ViewData["Message"] = "Your application description page.";
-
             return View();
         }
-
-        public IActionResult Contact()
+        
+        public IActionResult search()
         {
-            ViewData["Message"] = "Your contact page.";
+            //ViewData["Message"] = "Your contact page.";
 
-            return View();
-        }
-
-        public IActionResult Error()
-        {
             return View();
         }
     }

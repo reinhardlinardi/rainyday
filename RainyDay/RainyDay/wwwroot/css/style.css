@@ -6,7 +6,7 @@
 #main {
     background-image: url("newspapers.png");
     background-size: cover;
-    background-repeat: none;
+    background-repeat: no-repeat;
 }
 
 ul.menu {
@@ -42,18 +42,16 @@ ul.menu li a {
     padding-left: 15px;
     color: white;
     text-decoration: none;
-    font-size: 19;
+    font-size: 19px;
     font-family: "Tekton";
 }
 
-ul.menu li.passive:hover {
-    background-color: #848483;
-    height: 100%;
+ul.menu li.passive:hover a {
+    color: #fffd99;
 }
 
-ul.menu li.active {
-    background-color: #606060;
-    height: 100%;
+ul.menu li.active a {
+    color: #d1ff99;
 }
 
 #time {
@@ -82,7 +80,7 @@ img.logo {
     text-align: center;
     font-family: "Tekton";
     font-weight: 100;
-    font-size: 22;
+    font-size: 22px;
     color: white;
 }
 

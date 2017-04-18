@@ -46,14 +46,12 @@ ul.menu li a {
     font-family: "Tekton";
 }
 
-ul.menu li.passive:hover {
-    background-color: #848483;
-    height: 100%;
+ul.menu li.passive:hover a {
+    color: #fffd99;
 }
 
-ul.menu li.active {
-    background-color: #606060;
-    height: 100%;
+ul.menu li.active a {
+    color: #d1ff99;
 }
 
 #time {
