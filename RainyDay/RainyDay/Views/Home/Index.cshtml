@@ -22,7 +22,7 @@
     <h3 id="subtitle"> Your daily news solution. </h3>
 
     <div align="center" vertical-align="middle">
-        <form action="@Url.Action("search","Home")">
+        <form method="get" action="@Url.Action("search","Home")">
             <input type="text" id="keyword" name="keyword" placeholder="Type any keyword here">
 
             <select id="algorithm" name="algorithm">
