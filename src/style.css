@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Tekton";
+    src: url("Tekton.otf");
+}
+
 #main {
     background-image: url("newspapers.png");
     background-size: cover;
@@ -37,9 +42,8 @@ ul.menu li a {
     padding-left: 15px;
     color: white;
     text-decoration: none;
-    font-size: 16;
-    font-family: "Segoe UI";
-    font-weight: 400;
+    font-size: 19;
+    font-family: "Tekton";
 }
 
 ul.menu li.passive:hover {
@@ -61,8 +65,8 @@ ul.menu li.active {
     padding-left: 10px;
     color: white;
     text-decoration: none;
-    font-size: 16;
-    font-family: "Segoe UI";
+    font-size: 18;
+    font-family: "Tekton";
     font-weight: 400;
 }
 
@@ -76,9 +80,9 @@ img.logo {
 
 #subtitle {
     text-align: center;
-    font-family: "Segoe UI";
+    font-family: "Tekton";
     font-weight: 100;
-    font-size: 20;
+    font-size: 22;
     color: white;
 }
 
