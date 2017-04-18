@@ -1,0 +1,165 @@
+@font-face {
+    font-family: "Tekton";
+    src: url("Tekton.otf");
+}
+
+#main {
+    background-image: url("newspapers.png");
+    background-size: cover;
+    background-repeat: none;
+}
+
+ul.menu {
+    list-style-type: none;
+    top: 0;
+    left: 0;
+    height: 6%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    background-color: black;
+}
+
+ul.menu li.active,
+ul.menu li.passive {
+    float: left;
+}
+
+ul.menu li.menu_logo {
+    display: block;
+    float: left;
+    color: white;
+    padding-top: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+ul.menu li a {
+    display: block;
+    line-height: 35px;
+    padding-right: 15px;
+    padding-left: 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 19;
+    font-family: "Tekton";
+}
+
+ul.menu li.passive:hover {
+    background-color: #848483;
+    height: 100%;
+}
+
+ul.menu li.active {
+    background-color: #606060;
+    height: 100%;
+}
+
+#time {
+    display: block;
+    height: 100%;
+    float: right;
+    line-height: 38px;
+    padding-right: 10px;
+    padding-left: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 18;
+    font-family: "Tekton";
+    font-weight: 400;
+}
+
+img.logo {
+    margin-top: 150px;
+}
+
+#logo {
+    padding-left: 80px;
+}
+
+#subtitle {
+    text-align: center;
+    font-family: "Tekton";
+    font-weight: 100;
+    font-size: 22;
+    color: white;
+}
+
+#keyword {
+    width: 40%;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding-left: 10px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #eaecef;
+    transition: 1s;
+}
+
+#keyword:hover {
+    box-shadow: 0px 0px 15px #0061ff;
+    transition: 0.5s;
+}
+
+#keyword:focus {
+    box-shadow: 0px 0px 15px #01b504;
+    transition: 0.5s;
+}
+
+#keyword:not(focus) {
+    box-shadow: none;
+    transition: 0.5s;
+}
+
+#algorithm {
+    width: 125px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: #eaecef;
+    transition: 1s;
+}
+
+#algorithm:hover {
+    box-shadow: 0px 0px 15px #0061ff;
+    transition: 0.5s;
+}
+
+#algorithm:focus {
+    box-shadow: 0px 0px 15px #01b504;
+    transition: 0.5s;
+}
+
+#algorithm:not(focus) {
+    box-shadow: none;
+    transition: 0.5s;
+}
+
+#search {
+    background-color: #01b504;
+    color: white;
+    border-style: none;
+    text-align: center;
+    text-decoration: none;
+    height: 35px;
+    width: 90px;
+    margin-top: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+    font-size: 16px;
+    font-family: "Open Sans";
+}
+
+#search:hover {
+    box-shadow: 0px 0px 8px #0ffc2e;
+}
+
+#search:not(hover) {
+    box-shadow: none;
+}
