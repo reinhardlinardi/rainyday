@@ -7,7 +7,7 @@ namespace GetNews
 {
     class Program
     {
-        static void Main(string[] args)
+        /*static void Main(string[] args)
         {
             string[] urls = System.IO.File.ReadAllLines("NewsWebsites.txt");
 
@@ -37,9 +37,13 @@ namespace GetNews
                     Console.WriteLine();
                 }
             }
+            
+            //Insert Algorithm here
+            Algorithm kmp = new Algorithm();
 
-            Console.WriteLine("Press any key to continue");
-            Console.ReadKey();
-        }
+            //Console.WriteLine("Press any key to continue");
+            //Console.ReadKey();
+
+        }*/
     }
 }
