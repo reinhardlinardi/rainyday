@@ -11,25 +11,31 @@ namespace RainyDay.Controllers
     {
         /* View page only (for navigation bar) */
 
-        [HttpGet]
-        public IActionResult index()
+        public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult about()
+        public IActionResult About()
         {
             return View();
         }
         
-        public IActionResult search()
+        public IActionResult Search()
         {
-            Data model = new Data();
-                
-            model.keyword_input = "Keyword input : " + HttpContext.Request.Query["keyword"];
-            model.algorithm = "Algorithm : " + HttpContext.Request.Query["algorithm"];
-            
+            Data model = new Data()
+            {
+                keyword_input = "Keyword input : " + HttpContext.Request.Query["keyword"],
+                algorithm = "Algorithm : " + HttpContext.Request.Query["algorithm"]
+            };
+
             return View(model);
+        }
+        
+        [HttpPost]
+        public IActionResult HandleAjax(string query) // event handler for ajax HTTP request, data value stored in query
+        {
+            return Content("You typed : " + query); // sent response as string using ContentResult
         }
     }
 }

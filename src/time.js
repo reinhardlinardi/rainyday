@@ -1,9 +1,9 @@
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-var timer = setInterval(Timer, 1000);
+var timer = setInterval(ShowTime, 1000);
 
-function Timer() {
+function ShowTime() {
     var d = new Date();
     var s = "";
 

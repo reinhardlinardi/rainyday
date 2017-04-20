@@ -3,6 +3,11 @@
     src: url("Tekton.otf");
 }
 
+/* dummy */
+#your_keyword {
+    color: white;
+}
+
 #main {
     background-image: url("newspapers.png");
     background-size: cover;
