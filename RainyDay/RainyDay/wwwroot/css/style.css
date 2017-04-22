@@ -1,20 +1,15 @@
+/* Theme font */
+
 @font-face {
     font-family: "Tekton";
     src: url("Tekton.otf");
 }
 
-/* dummy */
-#your_keyword {
-    color: white;
-}
 
-#main {
-    background-image: url("newspapers.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
+/* Common UI : navigation bar */
 
 ul.menu {
+    /* Horizontal navigation bar */
     list-style-type: none;
     top: 0;
     left: 0;
@@ -28,10 +23,12 @@ ul.menu {
 
 ul.menu li.active,
 ul.menu li.passive {
+    /* All links container */
     float: left;
 }
 
 ul.menu li.menu_logo {
+    /* Umbrella icon on the left of navigation bar */
     display: block;
     float: left;
     color: white;
@@ -41,6 +38,7 @@ ul.menu li.menu_logo {
 }
 
 ul.menu li a {
+    /* All links */
     display: block;
     line-height: 35px;
     padding-right: 15px;
@@ -52,14 +50,17 @@ ul.menu li a {
 }
 
 ul.menu li.passive:hover a {
+    /* Passive link on mouse over */
     color: #fffd99;
 }
 
 ul.menu li.active a {
+    /* Active link */
     color: #d1ff99;
 }
 
 #time {
+    /* Time */
     display: block;
     height: 100%;
     float: right;
@@ -68,20 +69,32 @@ ul.menu li.active a {
     padding-left: 10px;
     color: white;
     text-decoration: none;
-    font-size: 18;
+    font-size: 18px;
     font-family: "Tekton";
-    font-weight: 400;
+}
+
+
+/* Home page */
+
+#main {
+    /* Body of home page */
+    background-image: url("newspapers.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 img.logo {
+    /* Umbrella icon and RainyDay in the center of the page */
     margin-top: 150px;
 }
 
 #logo {
+    /* Umbrella icon only */
     padding-left: 80px;
 }
 
 #subtitle {
+    /* Text below umbrella icon and RainyDay */
     text-align: center;
     font-family: "Tekton";
     font-weight: 100;
@@ -89,11 +102,39 @@ img.logo {
     color: white;
 }
 
+
+/* Search page */
+
+#search_and_update {
+    /* Black area below navigation bar */
+    background-color: #111111;
+    top: 0;
+    left: 0;
+    height: 25%;
+    width: 70%;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+div img.form_logo {
+    /* Umbrella icon and RainyDay on the left side of form */
+    display: block;
+    float: left;
+    margin-top: 70px;
+}
+
+#form_logo {
+    /* Umbrella icon only */
+    margin-left: 50px;
+}
+
 #keyword {
+    /* Keyword input */
     width: 40%;
     height: 30px;
-    margin-top: 30px;
-    margin-left: 8px;
+    margin-top: 110px;
     margin-right: 8px;
     padding-left: 10px;
     border-style: solid;
@@ -103,24 +144,28 @@ img.logo {
 }
 
 #keyword:hover {
+    /* Keyword input on mouse over */
     box-shadow: 0px 0px 15px #0061ff;
     transition: 0.5s;
 }
 
 #keyword:focus {
+    /* Keyword input on focus */
     box-shadow: 0px 0px 15px #01b504;
     transition: 0.5s;
 }
 
 #keyword:not(focus) {
+    /* Keyword input on loses focus */
     box-shadow: none;
     transition: 0.5s;
 }
 
 #algorithm {
+    /* Algorithm selection */
     width: 125px;
     height: 30px;
-    margin-top: 30px;
+    margin-top: 110px;
     margin-left: 8px;
     margin-right: 8px;
     border-style: solid;
@@ -130,39 +175,65 @@ img.logo {
 }
 
 #algorithm:hover {
+    /* Algorithm selection on mouse over */
     box-shadow: 0px 0px 15px #0061ff;
     transition: 0.5s;
 }
 
 #algorithm:focus {
+    /* Algorithm selection on focus */
     box-shadow: 0px 0px 15px #01b504;
     transition: 0.5s;
 }
 
 #algorithm:not(focus) {
+    /* Algorithm selection on loses focus */
     box-shadow: none;
     transition: 0.5s;
 }
 
-#search {
-    background-color: #01b504;
-    color: white;
-    border-style: none;
-    text-align: center;
-    text-decoration: none;
-    height: 35px;
-    width: 90px;
-    margin-top: 30px;
+#updater {
+    /* Update button */
+    background-color: #4286f4;
+    background-image: url("update.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-style: solid;
+    border-color: #4286f4;
+    border-radius: 3px;
+    width: 30px;
+    height: 30px;
+    margin-top: 110px;
     margin-left: 8px;
     margin-right: 8px;
-    font-size: 16px;
-    font-family: "Open Sans";
 }
 
-#search:hover {
-    box-shadow: 0px 0px 8px #0ffc2e;
+#updater:hover {
+    /* Update button on mouse over*/
+    box-shadow: 0px 0px 10px #4286f4;
+    transition: 0.5s;
 }
 
-#search:not(hover) {
-    box-shadow: none;
+#update_message {
+    /* Update message container */
+    background-color: #111111;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 70%;
+    height: 25%;
+    width: 30%;
+    position: fixed;
+    z-index: -1;
+}
+
+#message {
+    /* Message from updater */
+    margin-top: 115px;
+    margin-left: 10px;
+    color: white;
+    font-family: "Tekton";
+    font-size: 18px;
 }
