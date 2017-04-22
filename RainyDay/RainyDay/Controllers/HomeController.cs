@@ -28,7 +28,7 @@ namespace RainyDay.Controllers
         [HttpPost]
         public void StartUpdate() // update RSS Feed
         {
-            string[] url_list = System.IO.File.ReadAllLines("NewsWebsites.txt"); // read all rss url from text file
+            string[] url_list = System.IO.File.ReadAllLines("InputWebsites.txt"); // read all rss url from text file
             
             XmlReader xml_reader;
             XmlDocument xml_doc = new XmlDocument();

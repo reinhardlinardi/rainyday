@@ -14,3 +14,13 @@ D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\ParseHTML.cs
 D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.dll
 D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.pdb
 D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.xml
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\bin\Debug\ParseHTML.cs
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\bin\Debug\GetNews.exe.config
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\bin\Debug\GetNews.exe
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\bin\Debug\GetNews.pdb
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.dll
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.pdb
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.xml
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\obj\Debug\GetNews.csprojResolveAssemblyReference.cache
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\obj\Debug\GetNews.exe
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\GetNews\GetNews\obj\Debug\GetNews.pdb
