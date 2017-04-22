@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" xml:lang="id" lang="id" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://opengraphprotocol.org/schema/">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com/css?family=Patua+One">
+<link rel="preconnect" href="https://platform.twitter.com/widgets.js">
+<link rel="preconnect" href="https://statik.tempo.co">
+<link rel="preconnect" href="https://cdn.tmpo.co">
+<link rel="preconnect" href="https://a.props.id">
+<link rel="preconnect" href="https://au-insight.props.id">
+<link rel="preconnect" href="https://d5nxst8fruw4z.cloudfront.net">
+<link rel="preconnect" href="https://www.facebook.com"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,n,t){function r(t){if(!n[t]){var o=n[t]={exports:{}};e[t][0].call(o.exports,function(n){var o=e[t][1][n];return r(o||n)},o,o.exports)}return n[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({1:[function(e,n,t){function r(){}function o(e,n,t){return function(){return i(e,[c.now()].concat(u(arguments)),n?null:this,t),n?void 0:this}}var i=e("handle"),a=e(2),u=e(3),f=e("ee").get("tracer"),c=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,n){s[n]=o(d+n,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),n.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,n){var t={},r=this,o="function"==typeof n;return i(l+"tracer",[c.now(),e,t],r),function(){if(f.emit((o?"":"no-")+"fn-start",[c.now(),r,o],t),o)try{return n.apply(this,arguments)}finally{f.emit("fn-end",[c.now()],t)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,n){m[n]=o(l+n)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,c.now()])}},{}],2:[function(e,n,t){function r(e,n){var t=[],r="",i=0;for(r in e)o.call(e,r)&&(t[i]=n(r,e[r]),i+=1);return t}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],3:[function(e,n,t){function r(e,n,t){n||(n=0),"undefined"==typeof t&&(t=e?e.length:0);for(var r=-1,o=t-n||0,i=Array(o<0?0:o);++r<o;)i[r]=e[n+r];return i}n.exports=r},{}],4:[function(e,n,t){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,n,t){function r(){}function o(e){function n(e){return e&&e instanceof r?e:e?f(e,u,i):i()}function t(t,r,o,i){if(!d.aborted||i){e&&e(t,r,o);for(var a=n(o),u=m(t),f=u.length,c=0;c<f;c++)u[c].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(e,n){v[e]=m(e).concat(n)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(t)}function g(e,n){c(e,function(e,t){n=n||"feature",y[t]=n,n in s||(s[n]=[])})}var v={},y={},b={on:l,emit:t,get:w,listeners:m,context:n,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",f=e("gos"),c=e(2),s={},p={},d=n.exports=o();d.backlog=s},{}],gos:[function(e,n,t){function r(e,n,t){if(o.call(e,n))return e[n];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(e,n,t){function r(e,n,t,r){o.buffer([e],r),o.emit(e,n,t)}var o=e("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(e,n,t){function r(e){var n=typeof e;return!e||"object"!==n&&"function"!==n?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");n.exports=r},{}],loader:[function(e,n,t){function r(){if(!x++){var e=h.info=NREUM.info,n=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&n))return s.abort();c(y,function(n,t){e[n]||(e[n]=t)}),f("mark",["onload",a()+h.offset],null,"api");var t=d.createElement("script");t.src="https://"+e.agent,n.parentNode.insertBefore(t,n)}}function o(){"complete"===d.readyState&&i()}function i(){f("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),f=e("handle"),c=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1026.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=n.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),f("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="google-site-verification" content="St5lw-DX2gfbgtBtQmomSstvlSewdIgdCpYekVvEN48" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+			<meta property="fb:app_id" content="332404380172618" /> 
+			<meta property="og:type" content="article" /> 
+			<meta property="og:url" content="http://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan" /> 
+			<meta property="og:title" content="Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan | Tempo Pilkada" /> 
+			<meta property="og:image" content="https://cdn.tmpo.co/data/2017/04/15/id_599070/599070_620.jpg" /> 
+			<meta property="og:site_name" content="Tempo Pilkada"/>
+			<meta property="og:description" content=" Masyarakat di Kampung Akuarium, Jakarta Utara, bersorak gembira atas kemenangan pasangan Anies Baswedan" />
+			<meta name="twitter:card" content="summary_large_image">
+			<meta name="twitter:site" content="@tempodotco">
+			<meta name="twitter:title" content="Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan | Tempo Pilkada">
+			<meta name="twitter:description" content=" Masyarakat di Kampung Akuarium, Jakarta Utara, bersorak gembira atas kemenangan pasangan Anies Baswedan">
+			<meta name="twitter:image:src" content="https://cdn.tmpo.co/data/2017/04/15/id_599070/599070_620.jpg">
+			<title>Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan | Tempo Pilkada</title>
+			<meta name="language" content="id" />
+			<meta name="title" content="Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan | Tempo Pilkada" />
+			<meta name="description" content=" Masyarakat di Kampung Akuarium, Jakarta Utara, bersorak gembira atas kemenangan pasangan Anies Baswedan" />
+			<meta name="keywords" content="pilkada dki, putaran 2, penghitungan suara, akuarium, anies - sandi" />
+			<link rel="image_src" href="https://cdn.tmpo.co/data/2017/04/15/id_599070/599070_620.jpg"/>
+		<link rel="alternate" type="application/rss+xml" title="Tempo Pilkada" href="" />
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-23817453-36', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!--<script type="text/javascript">
+  // var _sf_async_config = { uid: 30463, domain: 'tempo.co', useCanonical: true };
+  // (function() {
+    // function loadChartbeat() {
+      // window._sf_endpt = (new Date()).getTime();
+      // var e = document.createElement('script');
+      // e.setAttribute('language', 'javascript');
+      // e.setAttribute('type', 'text/javascript');
+      // e.setAttribute('src','//static.chartbeat.com/js/chartbeat.js');
+      // document.body.appendChild(e);
+    // };
+    // var oldonload = window.onload;
+    // window.onload = (typeof window.onload != 'function') ?
+      // loadChartbeat : function() { oldonload(); loadChartbeat(); };
+  // })();
+</script>-->
+
+<!-- Start Alexa Certify Javascript -->
+
+<script type="text/javascript">
+
+_atrk_opts = { atrk_acct:"yIXbf1a0Ix00UK", domain:"tempo.co",dynamic: true};
+
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+
+</script>
+
+<noscript><img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=yIXbf1a0Ix00UK" style="display:none" height="1" width="1" alt="" /></noscript>
+
+<!-- End Alexa Certify Javascript -->  <!-- Begin comScore Tag -->
+
+<script>
+
+  var _comscore = _comscore || [];
+
+  _comscore.push({ c1: "2", c2: "16455543" });
+
+  (function() {
+
+    var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+
+    s.src = (document.location.protocol == "https:" ? "https://sb" : "https://b") + ".scorecardresearch.com/beacon.js";
+
+    el.parentNode.insertBefore(s, el);
+
+  })();
+
+</script>
+
+<noscript>
+
+  <img src="https://b.scorecardresearch.com/p?c1=2&c2=16455543&cv=2.0&cj=1" />
+
+</noscript>
+
+<!-- End comScore Tag -->
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-23817453-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+<!-- BING -->
+<meta name="msvalidate.01" content="F4953523D5B8FD01DC445462416CE1CA" />
+<!-- END BING -->
+
+
+
+<link rel="stylesheet" href="https://www.tempo.co/web/teco/pilkada/css/base.css?123456" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://www.tempo.co/web/teco/pilkada/css/flexslider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="https://www.tempo.co/web/teco/pilkada/css/mobile.css?12345" type="text/css" media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
+<link rel="shortcut icon" href="https://cdn.tmpo.co/tempo.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script language="javascript" src="https://www.tempo.co/web/teco/pilkada/js/jquery.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=332404380172618&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+	<div class="snap-drawers">
+		<div class="snap-drawer snap-drawer-left">
+			<ul class="menu-mobile">
+		<li  >
+		<a href="https://pilkada.tempo.co">Home</a>
+	</li>
+	<li  >
+		<a href="https://pilkada.tempo.co/kabar">Kabar</a>
+	</li>
+	<li  >
+		<a href="#">Political Index</a>
+		<ul>
+			<li><a href="https://pilkada.tempo.co/indeks_politik_jakarta">&nbsp;&nbsp;&nbsp;DKI Jakarta</a></li>
+		</ul>
+	</li>
+	<li  >
+		<a href="#">Daerah</a>
+		<ul>
+			<li><a href="https://pilkada.tempo.co/dki_jakarta">&nbsp;&nbsp;&nbsp;DKI Jakarta</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1991/pilkada-provinsi-banten-2017">&nbsp;&nbsp;&nbsp;Banten</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1996/pilkada-provinsi-Jawa-Barat-2017">&nbsp;&nbsp;&nbsp;Jawa Barat</a></li>
+		</ul>
+
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1997/pilkada-provinsi-Jawa-Tengah-2017">&nbsp;&nbsp;&nbsp;Jawa Tengah</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1998/pilkada-provinsi-jawa-timur-2017">&nbsp;&nbsp;&nbsp;Jawa Timur</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1999/pilkada-istimewa-yogyakarta-2017">&nbsp;&nbsp;&nbsp;Yogyakarta</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1988/pilkada-provinsi-aceh-2017">&nbsp;&nbsp;&nbsp;Aceh</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1989/pilkada-provinsi-bangka-belitung-2017">&nbsp;&nbsp;&nbsp;Bangka Belitung</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2000/pilkada-provinsi-riau-2017">&nbsp;&nbsp;&nbsp;Riau</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2001/pilkada-sumatra-barat-2017">&nbsp;&nbsp;&nbsp;Sumatra Barat</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2002/pilkada-Jambi-2017">&nbsp;&nbsp;&nbsp;Jambi</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2003/pilkada-sumatra-selatan-2017">&nbsp;&nbsp;&nbsp;Sumatra Selatan</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2004/pilkada-bengkulu-2017">&nbsp;&nbsp;&nbsp;Bengkulu</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2005/pilkada-provinsi-lampung-2017">&nbsp;&nbsp;&nbsp;Lampung</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2006/pilkada-provinsi-kalimantan-barat-2017">&nbsp;&nbsp;&nbsp;Kalimantan Barat</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2007/pilkada-provinsi-kalimantan-tengah-2017">&nbsp;&nbsp;&nbsp;Kalimantan Tengah</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2008/pilkada-provinsi-kalimantan-selatan-2017">&nbsp;&nbsp;&nbsp;Kalimantan Selatan</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2009/pilkada-provinsi-sulawesi-utara-2017">&nbsp;&nbsp;&nbsp;Kalimantan Utara</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1992/pilkada-provinsi-gorontalo-2017">&nbsp;&nbsp;&nbsp;Gorontalo</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2012/pilkada-provinsi-sulawesi-tenggara-2017">&nbsp;&nbsp;&nbsp;Sulawesi Tenggara</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2013/pilkada-Provinsi-sulawesi-barat-2017">&nbsp;&nbsp;&nbsp;Sulawesi Barat</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2014/pilkada-provinsi-sulawesi-selatan-2017">&nbsp;&nbsp;&nbsp;Sulawesi Selatan</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2015/pilkada-provinsi-nusa-tenggara-timur-2017">&nbsp;&nbsp;&nbsp;Nusa Tenggara Timur</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2016/Pilkada-provinsi-maluku-2017">&nbsp;&nbsp;&nbsp;Maluku</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2017/pilkada-provinsi-maluku-Utara-2017">&nbsp;&nbsp;&nbsp;Maluku Utara</a></li>
+		</ul>
+		<ul>
+			<li style="width: 100%;"><a href="https://pilkada.tempo.co/topik_pilkada/lembaga/2018/pilkada-provinsi-papua-2017">&nbsp;&nbsp;&nbsp;Papua</a></li>
+		</ul>
+
+	</li>
+	<li  >
+		<a href="https://pilkada.tempo.co/pernik">Pernik</a>
+	</li>
+	<li  >
+		<a href="https://pilkada.tempo.co/saling_silang">Saling Silang</a>
+	</li>
+	<li  >
+		<a href="https://pilkada.tempo.co/foto">Foto</a>
+	</li>
+	<li  >
+		<a href="https://pilkada.tempo.co/video">Video</a>
+	</li>
+</ul>
+        </div>
+		<div class="snap-drawer snap-drawer-right"></div>
+	</div>
+<div id="content" class="snap-content">
+<div class="full-body">
+
+<div class="header-outside">
+		<div class="header-inside">
+    	<div class="logo"><a href="https://pilkada.tempo.co"><img src="https://cdn.tmpo.co/web/teco/pilkada/images/logo-2017.png"></a></div>
+        <div class="block-menu">
+        	<ul class="main-menu">
+				 
+				<li  >
+					<a href="https://pilkada.tempo.co">Home</a>
+				</li>
+				<li  >
+					<a href="https://pilkada.tempo.co/kabar">Kabar</a>
+				</li>
+				<li  id="Index">
+					<a href="#">Political Index</a>
+					<ul id="sub_index" style="display:none;">
+						<li><a href="https://pilkada.tempo.co/indeks_politik_jakarta">&nbsp;&nbsp;DKI Jakarta&nbsp;&nbsp;</a></li>
+					</ul>
+				</li>
+				<li  id="daerah">
+					<a href="#">Daerah</a>
+					<div class="sub_daerah" style="height: 500px; overflow: auto; border-right: 0px !important; display:none;">
+					<ul id="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/dki_jakarta">DKI Jakarta</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1991/pilkada-provinsi-banten-2017">Banten</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1996/pilkada-provinsi-Jawa-Barat-2017">Jawa Barat</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1997/pilkada-provinsi-Jawa-Tengah-2017">Jawa Tengah</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1998/pilkada-provinsi-jawa-timur-2017">Jawa Timur</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1999/pilkada-istimewa-yogyakarta-2017">Yogyakarta</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1988/pilkada-provinsi-aceh-2017">Aceh</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1989/pilkada-provinsi-bangka-belitung-2017">Bangka Belitung</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2000/pilkada-provinsi-riau-2017">Riau</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2001/pilkada-sumatra-barat-2017">Sumatra Barat</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2002/pilkada-Jambi-2017">Jambi</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2003/pilkada-sumatra-selatan-2017">Sumatra Selatan</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2004/pilkada-bengkulu-2017">Bengkulu</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2005/pilkada-provinsi-lampung-2017">Lampung</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2006/pilkada-provinsi-kalimantan-barat-2017">Kalimantan Barat</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2007/pilkada-provinsi-kalimantan-tengah-2017">Kalimantan Tengah</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2008/pilkada-provinsi-kalimantan-selatan-2017">Kalimantan Selatan</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2009/pilkada-provinsi-sulawesi-utara-2017">Kalimantan Utara</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/1992/pilkada-provinsi-gorontalo-2017">Gorontalo</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2012/pilkada-provinsi-sulawesi-tenggara-2017">Sulawesi Tenggara</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2013/pilkada-Provinsi-sulawesi-barat-2017">Sulawesi Barat</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2014/pilkada-provinsi-sulawesi-selatan-2017">Sulawesi Selatan</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2015/pilkada-provinsi-nusa-tenggara-timur-2017">Nusa Tenggara Timur</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2016/Pilkada-provinsi-maluku-2017">Maluku</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2017/pilkada-provinsi-maluku-Utara-2017">Maluku Utara</a></li>
+					</ul>
+					<ul class="sub_daerah" style="display:none;">
+						<li style="width: 100%;"><a href="/topik_pilkada/lembaga/2018/pilkada-provinsi-papua-2017">Papua</a></li>
+					</ul>
+					</div>
+
+				</li>
+				<li  >
+					<a href="https://pilkada.tempo.co/pernik">Pernik</a>
+				</li>
+				<li  >
+					<a href="https://pilkada.tempo.co/saling_silang">Saling Silang</a>
+				</li>
+				<li  >
+					<a href="https://pilkada.tempo.co/foto">Foto</a>
+				</li>
+				<li  >
+					<a href="https://pilkada.tempo.co/video">Video</a>
+				</li>
+
+				<li style="border:none;padding-left:15px"><img src="https://cdn.tmpo.co/web/teco/images/assets/TwitterLogo_white.png" width="40px" style="margin-top:10px;"></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="main-body" style="padding-top:60px;">
+	<!--<div class="banner-center p15-all t-center"></div>-->
+</div> <!--main body-->
+	<div class="pages">
+	    <div class="block-judul-artikel">
+    <ul class="site-map">
+    	<li><a href="https://www.tempo.co" class="shadow fade">home</a></li><li><a href="https://pilkada.tempo.co" class="shadow fade">pilkada</a></li><li><a href="#" class="shadow fade">pilkada dki jakarta</a></li>    	<!-- <li><a href="#">Tempo.co</a></li>
+    	<li><a href="#">Pilkada</a></li>
+    	<li><a href="#">Foto</a></li> -->
+    	</ul>
+    <h1 class="judul-artikel">Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan</h1>
+    <h5 class="tanggal">Rabu, 19 April 2017 | 15:54 WIB</h5>
+    </div>    <div class="left-side">
+    			<div class="block-artikel">
+    	<div class="block-foto">
+        	<img src="https://cdn.tmpo.co/data/2017/04/15/id_599070/599070_620.jpg" alt="Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan">
+		<div class="block-caption">Seorang petugas memberi pengarahan pada warga saat memeriksa gula darah di Kampung Akuarium, Jakarta, 15 April 2017. Selain mendapatkan pemeriksaan kesehatan gratis, acara ini juga menggelar bazar. TEMPO/Fajar Januarta</div>
+        </div>
+    	<div class="p-artikel">
+<p><span style="color: #666666;"><strong>TEMPO.CO</strong></span>, <span style="color: #666666;"><strong>Jakarta</strong></span> - Masyarakat di Kampung Akuarium, Jakarta Utara, bersorak gembira atas kemenangan pasangan Anies Baswedan - Sandiaga Uno di&nbsp;Tempat Pemungutan Suara (TPS) nomor 16 dan 17 Kelurahan Penjaringan. Untuk merayakan kemenangan itu, beberapa di antara mereka membagikan jajanan ringan dan minuman kaleng yang dibeli dalam jumlah besar. <br /><br />Penduduk yang masih berkumpul di sekitar TPS juga menyerbu pedagang gorengan dan sate usus. "Sudah ada yang membayar," ujar pedagang gorengan di samping tenda TPS 16, Jalan Pakin, Penjaringan, Rabu, 19 April 2017.<br /><br /><strong>Simak:</strong> <strong><a href="http://quickcount.tempo.co%20" target="_blank">Hasil Quick Count atau Hitung Cepat Pilkada DKI 2017<br /><br /></a></strong>Sebagian besar pemilih di TPS 16 dan 17 adalah warga Kampung Akuarium dan Pasar Ikan Luar Batang. Mereka menjadi korban saat kawasan itu digusur oleh pemerintah DKI Jakarta. <br /><br />Di TPS 16, Anies-Sandi mendapat 333 suara dari total 465 pemilih yang menggunakan hak suara. Adapun pasangan Basuki Tjahaja Purnama dan Djarot Saiful Hidayat hanya mendapat 131 suara, sementara terdapat 1 suara tidak sah. <br /><br />Anies-Sandi juga menang telak di TPS 17 Penjaringan dengan 297 suara dari total 356 pemilih. Basuki-Djarot hanya mendapat 57 suara, di luar 2 surat suara yang tak sah. <br /> <br /> Penghitungan suara di TPS 17 itu berlangsung heboh, di mana penduduk setempat bersorak setiap kali hasil pilihan diumumkan. "Ah mules, siapa sih ini yang pilih?" teriak seorang penduduk saat panitia pemilihan menyebut nomor urut 2. Ada juga sekelompok orang yang kompak meneriakkan "Bahagia warganya", saat nomor urut 3 dibacakan. <br /> <br /><strong>Baca: <a title="Pilkada DKI, Ahok: Kalah atau Menang Saya Tetap Kerja" href="https://pilkada.tempo.co/read/news/2017/04/19/348867533/pilkada-dki-ahok-kalah-atau-menang-saya-tetap-kerja">Pilkada DKI, Ahok: Kalah atau Menang Saya Tetap Kerja</a></strong><br /><br />Tingkat partisipasi di kedua TPS tak mencapai 100 persen. TPS 16 dihadiri 465 pemilih dari total 588 nama yang tercantum sebagai Daftar Pemilih tetap. Angka 465 itu sudah termasuk 21 orang yang menjadi pemilih tambahan. <br /><br /><strong>YOHANES PASKALIS</strong></p>    	</div>
+    </div> <!-- end block artikel -->
+    
+
+<div class="blocked">
+	<div class="blocked-inside off" id="clean-box">
+		<div class="w50-left">
+			<h2 class="title-kanalisasi">Berita Terkait</h2>
+			<ul class="list-text">
+				<li><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867548/di-tps-rizieq-syihab-ahok-menang-lagi-dengan-286-suara" title="Di TPS Rizieq Syihab, Ahok Menang Lagi dengan 286 Suara">Di TPS Rizieq Syihab, Ahok Menang Lagi dengan 286 Suara</a></li><li><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867547/tim-ahok-djarot-minta-saksi-pantau-penghitungan-suara-langsung" title="Tim Ahok-Djarot Minta Saksi Pantau Penghitungan Suara Langsung">Tim Ahok-Djarot Minta Saksi Pantau Penghitungan Suara Langsung</a></li><li><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867544/anies-sandi-menang-di-tps-08-kampung-pulo-penduduk-bersorak" title="Anies - Sandi Menang di TPS 08 Kampung Pulo, Penduduk Bersorak">Anies - Sandi Menang di TPS 08 Kampung Pulo, Penduduk Bersorak</a></li><li><a href="https://pilkada.tempo.co/read/news/2017/04/19/304867543/daftar-pemilih-rutan-salemba-berkurang-dkpp-minta-kpu-berbenah" title="Daftar Pemilih Rutan Salemba Berkurang, DKPP Minta KPU Berbenah">Daftar Pemilih Rutan Salemba Berkurang, DKPP Minta KPU Berbenah</a></li><li><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867540/quick-count-anies-sandi-menang-jakarta-barat-berhasil-direbut" title="Quick Count: Anies-Sandi Menang, Jakarta Barat Berhasil Direbut">Quick Count: Anies-Sandi Menang, Jakarta Barat Berhasil Direbut</a></li>			</ul>
+			<h2 class="title-kanalisasi m30-t">Topik</h2>
+			<ul class="topik-terkait">
+				<li><a href="https://www.tempo.co/topik/masalah/1432/pilkada-dki-2017">#Pilkada DKI 2017</a></li><li><a href="https://www.tempo.co/topik/lokasi/131/kotamadya-jakarta-utara-dki-jakarta">#Kotamadya Jakarta Utara | DKI Jakarta</a></li>			</ul>
+		</div><!--//block box-->
+		<div class="w50-right">
+			<ul class="terkait-img">
+				
+				<li>
+					<div class="multi-terkait">Foto</div>
+					<a href="http://foto.tempo.co/read/beritafoto/51248/berkemeja-kotak-kotak-megawati-nyoblos-di-kebagusan" title="Berkemeja Kotak-kotak, Megawati Nyoblos di Kebagusan"><img src="https://statik.tempo.co/?id=600093" alt="Berkemeja Kotak-kotak, Megawati Nyoblos di Kebagusan" class="img100"></a>
+					<h4><a href="http://foto.tempo.co/read/beritafoto/51248/berkemeja-kotak-kotak-megawati-nyoblos-di-kebagusan" title="Berkemeja Kotak-kotak, Megawati Nyoblos di Kebagusan">Berkemeja Kotak-kotak, Megawati Nyoblos di Kebagusan</a></h4>
+				</li>
+			
+				<li>
+					<div class="multi-terkait">Video</div>
+					<a href="https://video.tempo.co/read/2017/04/19/6548/suasana-pemungutan-suara-di-tps-8-kampung-pulo" title="Suasana Pemungutan Suara di TPS 8 Kampung Pulo"><img src="https://statik.tempo.co/?id=600101" alt="Suasana Pemungutan Suara di TPS 8 Kampung Pulo" class="img100"></a>
+					<h4><a href="https://video.tempo.co/read/2017/04/19/6548/suasana-pemungutan-suara-di-tps-8-kampung-pulo" title="Suasana Pemungutan Suara di TPS 8 Kampung Pulo">Suasana Pemungutan Suara di TPS 8 Kampung Pulo</a></h4>
+				</li>
+			
+				<li>
+					<div class="multi-terkait">Infografis</div>
+					<a href="http://grafis.tempo.co/read/flashgrafis/2017/01/20/789/lsi-denny-j-a-versus-lsi" title="LSI Denny J.A. Versus LSI"><img src="https://statik.tempo.co/?id=572216" alt="LSI Denny J.A. Versus LSI" class="img100"></a>
+					<h4><a href="http://grafis.tempo.co/read/flashgrafis/2017/01/20/789/lsi-denny-j-a-versus-lsi" title="LSI Denny J.A. Versus LSI">LSI Denny J.A. Versus LSI</a></h4>
+				</li>
+						</ul>
+		</div>
+		<!--/blocking berita terkait & Indonesiana terkait-->
+	</div>
+</div>    	<div class="blocked">
+<div class="blocked-inside" id="clean-box">
+<div class="share-konten">
+	<div class="viewport-share"></div>
+	<div class="title">Bagikan<br>Halaman ini</div>
+	<ul class="share-big">
+		<li class="pinterest">
+			<a href="javascript:void(0)" onclick="popupwindow('http://pinterest.com/pin/create/link/?url=http://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan', 'Pinterest', 600, 400)" title="Pinterest">
+				<div class="angka angka-pin">0</div>
+				<div class="med-name">Pint it</div>
+			</a>
+		</li>
+		<li class="like">
+			<a href="javascript:void(0)" onclick="popupwindow('http://www.facebook.com/plugins/like.php?href=http://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan', 'Facebook Like', 600, 400)" title="Like">
+				<div class="angka angka-like">0</div>
+				<div class="med-name">Like</div>
+			</a>
+		</li>
+		<li class="google">
+			<a href="javascript:void(0)" onclick="popupwindow('https://plus.google.com/share?url=http://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan', 'Google Share', 600, 400)" title="Google+">
+				<div class="angka angka-google">0</div>
+				<div class="med-name">Google+</div>
+			</a>
+		</li>
+		<li class="twitter">
+			<a href="javascript:void(0)" onclick="popupwindow('https://twitter.com/home?status=http://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan', 'Twitter Share', 600, 400)" title="Twitter">
+				<div class="angka angka-twitter">0</div>
+				<div class="med-name">Twitter</div>
+			</a>
+		</li>
+		<li class="fb">
+			<a href="javascript:void(0)" onclick="popupwindow('https://www.facebook.com/sharer/sharer.php?u=http://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan', 'Share Facebook', 600, 400)" title="Facebook">
+				<div class="angka angka-fb">0</div>
+				<div class="med-name">Facebook</div>
+			</a>
+		</li>
+	</ul>
+</div>
+</div>
+</div>    	<div class="blocked">
+	<h2 class="title-kanal">Komentar
+        <div class="tab-comment">
+            <div class="fb-comment-btn fb"><a href="#" title="komentar lewat Akun Facebook"></a></div>
+            <div class="tempo-comment-btn tid"><a href="#" title="komentar lewat Akun Tempo.ID"></a></div>
+        </div>
+    </h2>
+    <div class="blocked-inside">
+	<div class="komentar-inside">
+		<div class="tulis-komentar">
+			<div class="auth-komentar"><!-- JS APPEND AUTH HERE --></div>
+			<textarea class="form komen-input" placeholder="Komentari berita di atas..." style="width:99%;"></textarea>
+			<input type="hidden" class="hdkomentarType" value="idnews"/>
+			<input type="hidden" class="hdkomentarId" value="867550"/>
+			<input type="hidden" class="hdkomentarMod" value=""/>
+			<button class="kirim-komentar sendComment" style="margin:0 0.5%;">Kirim</button>
+			<p class="disclaimer">Disclaimer : Komentar adalah tanggapan pribadi, tidak mewakili kebijakan editorial redaksi tempo.co. Redaksi berhak mengubah kata-kata yang berbau pelecehan, intimidasi, bertendensi suku, agama, ras, dan antar golongan</p>
+		</div>
+		<!--//tulis komentar-->
+		<ul class="baca-komentar list-komentar">
+			<!-- JS APPEND COMMENT HERE -->
+		</ul>
+	</div>
+	<!--//komentar inside-->
+	<div class="hal-komentar">
+		<!-- JS APPEND PAGINATION COMMENT HERE -->
+	</div>
+		<div class="fb-comments" data-href="http://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan" data-width="100%" data-numposts="5" data-colorscheme="light"></div>
+	<div class="addcrowdy"> </div>
+</div>
+</div>
+<!--//komentar -->
+    </div> <!-- left side -->
+        <div class="right-side">
+        <!--<div class="spot-banner-right"></div>-->
+       	
+        <div class="blocked">
+			<h2 class="title-kanal">Terpopuler</h2>
+            <div class="blocked-inside">
+            <ul class="populer">
+				<li><div class="nomor">1</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/18/348867274/prabowo-hanya-kecurangan-besar-yang-bisa-mengalahkan-anies-sandi" alt="Prabowo: Hanya Kecurangan Besar yang Bisa Mengalahkan Anies-Sandi &nbsp;">Prabowo: Hanya Kecurangan Besar yang Bisa Mengalahkan Anies-Sandi &nbsp;</a></h2></li><li><div class="nomor">2</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/18/348867296/panitia-keluarkan-maklumat-untuk-peserta-tamasya-al-maidah" alt="Panitia Keluarkan Maklumat untuk Peserta Tamasya Al Maidah">Panitia Keluarkan Maklumat untuk Peserta Tamasya Al Maidah</a></h2></li><li><div class="nomor">3</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/18/348867299/anies-hari-pencoblosan-pilkada-besok-seperti-perang-badar" alt="Anies: Hari Pencoblosan Pilkada Besok Seperti Perang Badar">Anies: Hari Pencoblosan Pilkada Besok Seperti Perang Badar</a></h2></li><li><div class="nomor">4</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/18/348867295/besok-panitia-tetap-menggelar-acara-tamasya-al-maidah" alt="Besok, Panitia Tetap Menggelar Acara Tamasya Al Maidah &nbsp;">Besok, Panitia Tetap Menggelar Acara Tamasya Al Maidah &nbsp;</a></h2></li><li><div class="nomor">5</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/18/348867243/dituding-bagi-bagi-sembako-timses-ahok-maling-teriak-maling" alt="Dituding Bagi-bagi Sembako, Timses Ahok: Maling Teriak Maling &nbsp;">Dituding Bagi-bagi Sembako, Timses Ahok: Maling Teriak Maling &nbsp;</a></h2></li><li><div class="nomor">6</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/18/348867289/hasto-pdip-optimistis-ahok-djarot-menang-52-4-persen" alt="Hasto PDIP Optimistis Ahok-Djarot Menang 52,4 Persen">Hasto PDIP Optimistis Ahok-Djarot Menang 52,4 Persen</a></h2></li><li><div class="nomor">7</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/18/348867255/tamasya-al-maidah-fadli-jangan-ada-intimidasi-kayak-iwan-bopeng" alt="Tamasya Al-Maidah, Fadli: Jangan Ada Intimidasi Kayak Iwan Bopeng">Tamasya Al-Maidah, Fadli: Jangan Ada Intimidasi Kayak Iwan Bopeng</a></h2></li><li><div class="nomor">8</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867414/panwas-sita-sembako-jimly-pasangan-calon-bisa-didiskualifikasi" alt="Panwas Sita Sembako, Jimly: Pasangan Calon Bisa Didiskualifikasi">Panwas Sita Sembako, Jimly: Pasangan Calon Bisa Didiskualifikasi</a></h2></li><li><div class="nomor">9</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867303/kapolri-tito-karnavian-menjelaskan-makna-pin-aman-ada-kami" alt="Kapolri Tito Karnavian Menjelaskan Makna Pin Aman Ada Kami  &nbsp;">Kapolri Tito Karnavian Menjelaskan Makna Pin Aman Ada Kami  &nbsp;</a></h2></li><li><div class="nomor">10</div><h2 class="populer"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867461/pilkada-dki-putaran-2-ketua-pps-petamburan-diusir-warga" alt="Pilkada DKI Putaran 2, Ketua PPS Petamburan Diusir Warga">Pilkada DKI Putaran 2, Ketua PPS Petamburan Diusir Warga</a></h2></li>            </ul>
+            </div><!--blocked inside-->
+		</div><!--blocked terpopuler -->		<!--<div class="spot-banner-right"></div>-->
+    </div> <!-- right side -->
+    </div> <!-- end pages -->
+
+</div> <!-- full body -->
+<div id="toolbar">
+	<a href="#" id="open-left"></a>
+<a href="https://pilkada.tempo.co"><h1 class="logomobile"></h1></a>
+<a href="#" id="open-twitter"><img src="https://cdn.tmpo.co/web/teco/images/assets/TwitterLogo_white.png" width="44" height="44"></a></div>
+<div class="last-body">
+	<div class="last-pages">
+ 	<div class="blocked">
+    	<h2 class="title-kanal">Berita Terbaru</h2>
+<div class="terbaru-left">
+	 <ul class="terbaru">
+ 	        		<li>
+            	<div class="block-img"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan" title="Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan"><img src="https://cdn.tmpo.co/data/2017/04/15/id_599070/599070_300.jpg" alt="Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan"></a></div>                <div class="block-text">
+                	<ul class="inliner"><li><h5 class="subkanal"><a href="https://pilkada.tempo.co" class="fade">pilkada</a></h5></li><li><h5 class="tanggal">2 menit </h5></li></ul>
+					<h2 class="title"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867550/anies-sandi-unggul-di-kampung-akuarium-masyarakat-pesta-jajanan" title="Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan">Anies-Sandi Unggul di Kampung Akuarium, Masyarakat Pesta Jajanan</a></h2>                </div>
+            </li>
+                    		<li>
+            	<div class="block-img"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867548/di-tps-rizieq-syihab-ahok-menang-lagi-dengan-286-suara" title="Di TPS Rizieq Syihab, Ahok Menang Lagi dengan 286 Suara"><img src="https://cdn.tmpo.co/data/2017/04/19/id_600007/600007_300.jpg" alt="Di TPS Rizieq Syihab, Ahok Menang Lagi dengan 286 Suara"></a></div>                <div class="block-text">
+                	<ul class="inliner"><li><h5 class="subkanal"><a href="https://pilkada.tempo.co" class="fade">pilkada</a></h5></li><li><h5 class="tanggal">2 menit lalu</h5></li></ul>
+					<h2 class="title"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867548/di-tps-rizieq-syihab-ahok-menang-lagi-dengan-286-suara" title="Di TPS Rizieq Syihab, Ahok Menang Lagi dengan 286 Suara">Di TPS Rizieq Syihab, Ahok Menang Lagi dengan 286 Suara</a></h2>                </div>
+            </li>
+                    		<li>
+            	<div class="block-img"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867547/tim-ahok-djarot-minta-saksi-pantau-penghitungan-suara-langsung" title="Tim Ahok-Djarot Minta Saksi Pantau Penghitungan Suara Langsung"><img src="https://cdn.tmpo.co/data/2012/12/12/id_155898/155898_300.jpg" alt="Tim Ahok-Djarot Minta Saksi Pantau Penghitungan Suara Langsung"></a></div>                <div class="block-text">
+                	<ul class="inliner"><li><h5 class="subkanal"><a href="https://pilkada.tempo.co" class="fade">pilkada</a></h5></li><li><h5 class="tanggal">7 menit lalu</h5></li></ul>
+					<h2 class="title"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867547/tim-ahok-djarot-minta-saksi-pantau-penghitungan-suara-langsung" title="Tim Ahok-Djarot Minta Saksi Pantau Penghitungan Suara Langsung">Tim Ahok-Djarot Minta Saksi Pantau Penghitungan Suara Langsung</a></h2>                </div>
+            </li>
+            		</ul>
+</div>
+<div class="terbaru-right">
+ <ul class="terbaru">
+
+        				             		<li>
+            	<div class="block-img"><a href="https://pilkada.tempo.co/read/news/2017/04/19/304867543/daftar-pemilih-rutan-salemba-berkurang-dkpp-minta-kpu-berbenah" title="Daftar Pemilih Rutan Salemba Berkurang, DKPP Minta KPU Berbenah"><img src="https://cdn.tmpo.co/data/2017/04/19/id_600038/600038_300.jpg" alt="Daftar Pemilih Rutan Salemba Berkurang, DKPP Minta KPU Berbenah"></a></div>                <div class="block-text">
+                	<ul class="inliner"><li><h5 class="subkanal"><a href="https://pilkada.tempo.co" class="fade">pilkada</a></h5></li><li><h5 class="tanggal">10 menit lalu</h5></li></ul>
+					<h2 class="title"><a href="https://pilkada.tempo.co/read/news/2017/04/19/304867543/daftar-pemilih-rutan-salemba-berkurang-dkpp-minta-kpu-berbenah" title="Daftar Pemilih Rutan Salemba Berkurang, DKPP Minta KPU Berbenah">Daftar Pemilih Rutan Salemba Berkurang, DKPP Minta KPU Berbenah</a></h2>                </div>
+            </li>
+						             		<li>
+            	<div class="block-img"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867540/quick-count-anies-sandi-menang-jakarta-barat-berhasil-direbut" title="Quick Count: Anies-Sandi Menang, Jakarta Barat Berhasil Direbut"><img src="https://cdn.tmpo.co/data/2017/04/19/id_600121/600121_300.jpg" alt="Quick Count: Anies-Sandi Menang, Jakarta Barat Berhasil Direbut"></a></div>                <div class="block-text">
+                	<ul class="inliner"><li><h5 class="subkanal"><a href="https://pilkada.tempo.co" class="fade">pilkada</a></h5></li><li><h5 class="tanggal">20 menit lalu</h5></li></ul>
+					<h2 class="title"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867540/quick-count-anies-sandi-menang-jakarta-barat-berhasil-direbut" title="Quick Count: Anies-Sandi Menang, Jakarta Barat Berhasil Direbut">Quick Count: Anies-Sandi Menang, Jakarta Barat Berhasil Direbut</a></h2>                </div>
+            </li>
+						             		<li>
+            	<div class="block-img"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867534/pilkada-dki-anies-sandi-tekuk-ahok-djarot-di-kampung-pulo" title="Pilkada DKI, Anies-Sandi Tekuk Ahok-Djarot di Kampung Pulo"><img src="https://cdn.tmpo.co/data/2017/04/19/id_600101/600101_300.jpg" alt="Pilkada DKI, Anies-Sandi Tekuk Ahok-Djarot di Kampung Pulo"></a></div>                <div class="block-text">
+                	<ul class="inliner"><li><h5 class="subkanal"><a href="https://pilkada.tempo.co" class="fade">pilkada</a></h5></li><li><h5 class="tanggal">35 menit lalu</h5></li></ul>
+					<h2 class="title"><a href="https://pilkada.tempo.co/read/news/2017/04/19/348867534/pilkada-dki-anies-sandi-tekuk-ahok-djarot-di-kampung-pulo" title="Pilkada DKI, Anies-Sandi Tekuk Ahok-Djarot di Kampung Pulo">Pilkada DKI, Anies-Sandi Tekuk Ahok-Djarot di Kampung Pulo</a></h2>                </div>
+            </li>
+					</ul>
+</div>
+	</div>
+    </div><!--lastpage 1-->
+</div> <!--last body-->
+</div> <!-- full body -->
+<footer>
+	<div class="footer-inside">
+    <span>&copy; 2015 - Tempo.co</span>
+    </div>
+</footer>
+</div> <!-- span content -->
+
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"75f34d5354","applicationID":"48712708","transactionName":"YVYAZ0NSWRdXW01aXFgcN0FYHF4KUl1BHUNeQw==","queueTime":0,"applicationTime":473,"atts":"TREDEQtIShk=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+<script language="javascript" src="https://www.tempo.co/web/teco/js/jquery-1.10.2.min.js"></script>
+<script language="javascript" src="https://www.tempo.co/web/teco/js/cookie.min.js"></script>
+<script language="javascript" src="https://www.tempo.co/web/teco/js/function.js?1234"></script>
+<script language="javascript" src="https://www.tempo.co/web/teco/js/jquery.lazyload-any.min.js"></script>
+
+<script type="text/javascript" src="https://www.tempo.co/web/teco/pilkada/js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="https://www.tempo.co/web/teco/pilkada/js/snap.js"></script>
+<script type="text/javascript" src="https://www.tempo.co/web/teco/pilkada/js/demsnap.js"></script>
+
+ <script type="text/javascript">
+            var snapper = new Snap({
+                element: document.getElementById('content')
+            });
+            	addEvent(document.getElementById('open-left'), 'click', function(){
+    if( snapper.state().state=="left" ){
+       snapper.close('left');
+    }else {
+        snapper.open('left');
+    }
+});
+</script>
+<script>
+$(document).ready(function() {
+$('#pilkada-utama').flexslider({
+    animation: "fade"
+  });
+$('#video-front').flexslider({
+    animation: "slide"
+  });
+$('#foto-front').flexslider({
+    animation: "fade"
+  });
+});
+
+$('#daerah').hover( function(){ 
+  $("#sub_daerah").css("display", "block"); 
+  $("#sub_daerah").css("background-color", "#a71c2c"); 
+}, function(){
+  $("#sub_daerah").css("display", "none");
+});
+
+$('#daerah').hover( function(){
+  $(".sub_daerah").css("display", "block");
+  $(".sub_daerah").css("background-color", "#a71c2c");
+}, function(){
+  $(".sub_daerah").css("display", "none");
+});
+
+//political index
+$('#Index').hover( function(){ 
+  $("#sub_index").css("display", "block"); 
+  $("#sub_index").css("background-color", "#a71c2c"); 
+}, function(){
+  $("#sub_index").css("display", "none");
+});
+
+
+</script>
+
+<script>
+jQuery(document).ready(function() {
+	$('.sendComment').click(function() {
+	all_no_border();
+	$(this).hide();
+	// Check token
+	var tempoToken = docCookies.getItem('tempoToken');
+	if(tempoToken === null || tempoToken == '') { // Jika blm ada token
+		if($('.inputUsername').length == 0) { // Jika form tidak ada
+			$('.auth-komentar').html('');
+			$('.auth-komentar').html('<div class="block-profil" style="margin-bottom:0;">' +
+										'<input type="text" class="form inputUsername" placeholder="Email Tempo ID" style="width:45.8%; float:left; margin-right:10px;">' +
+										'<input type="password" class="form inputPassword" placeholder="Password Tempo ID" style="width:45.8%;">' +
+									'</div>');
+			// Top login
+			$('.top-space-login').html('');
+			$('.top-space-login').html('<ul>' +
+											'<li><span class="user-login"></span>Login' +
+												'<ul>' +
+													'<li>' +
+														'<div class="m10-t"><input type="text" class="login-passwd usernameTop" placeholder="login"/></div>' +
+														'<input type="password" class="login-passwd passwordTop" placeholder="password"/>' +
+														'<button class="login-button loginTop">Login!</button>' +
+													'</li>' +
+												'</ul>' +
+											'</li>' +
+											'<li><a href="http://langganan.tempo.co/registrasi.php" class="fade"><span class="user-register"></span>Register</a></li>');
+			loginTop();
+			$('.sendComment').show();
+		} else { // Jika ada form login maka cek login
+			var username = $('.inputUsername').val();
+			var password = $('.inputPassword').val();
+			// Check login
+			$.ajax({
+				type: "POST",
+				url: "/rest/auth/sso.json",
+				dataType: "JSON",
+				data:{"usr":username,"pass":password},
+				beforeSend: function(a) {
+					a.setRequestHeader("Authorization", "Basic ZGV2MjAxNTp0ZW1wb2RldjIwMTU=")
+				},
+				success: function(e) {
+					if(typeof e.token !== "undefined") { // Jika login sukses
+						token = e.token;
+						docCookies.setItem("tempoToken", e.token, "31536e3", "/", ".tempo.co");
+						// Dapatkan Nama
+						$.ajax({
+							type: "POST",
+							url: "/rest/auth/sso.json",
+							dataType: "JSON",
+							data:{"token":e.token},
+							beforeSend: function(a) {
+								a.setRequestHeader("Authorization", "Basic ZGV2MjAxNTp0ZW1wb2RldjIwMTU=")
+							},
+							success: function(e) {
+								if(typeof e.email !== undefined) { // Jika berhasil dapatkan nama
+									$('.auth-komentar').html('');
+									$('.auth-komentar').html('<div class="block-profil">' +
+																'<div class="nama-profil"><a href="#" title="' + e.nama_depan + '">' + e.nama_depan + '</a></div>' +
+																'<ul class="profil-link">' +
+																	'<li><a target="_blank" href="http://langganan.tempo.co/profil?email=' + e.email + '">Edit Profil</a></li>' +
+																	'<li><a target="_blank" href="http://indonesiana.tempo.co/' + e.username + '">Profil Indonesiana</a></li>' +
+																	'<li><a target="_blank" href="http://indonesiana.tempo.co/create_text">Tulis Indonesiana</a></li>' +
+																	'<li><a href="#" class="logoutComment">Keluar</a></li>' +
+																'</ul>' +
+															'</div>');
+									buttonLogout();
+									$('.top-space-login').html('');
+									$('.top-space-login').html('<ul>' +
+																	'<li>' + e.nama_depan +
+																		'<ul>' +
+																			'<li style="height: 10px;"><a href="http://langganan.tempo.co/profil?email=' + e.email + '">Profil</a></li>' +
+																			'<li style="height: 10px; padding-bottom: 20px;"><a href="#" class="buttonTopLogout">Logout</a></li>' +
+																		'</ul>' +
+																	'</li>');
+									buttonLogoutTop();
+									// Cek apakah form isi komentar kosong
+									var text_komentar = $('.komen-input').val();
+									var hdType = $('.hdkomentarType').val();
+									var hdId = $('.hdkomentarId').val();
+									var hdMod = $('.hdkomentarMod').val();
+									if(text_komentar == '') { // Jika Komentar kosong
+										text_border_red();
+										$('.sendComment').show();
+									} else { // Jika komentar terisi maka post komentar
+										var dataPostKomentar = {};
+										dataPostKomentar[hdType] = hdId;
+										dataPostKomentar["token"] = token;
+										dataPostKomentar["komentar"] = text_komentar;
+										if(hdMod != '') {
+											dataPostKomentar["mod"] = hdMod;
+										}
+										$.ajax({
+											type: "POST",
+											url: "/rest/berita/komentar.json",
+											dataType: "JSON",
+											data:dataPostKomentar,
+											beforeSend: function(a) {
+												a.setRequestHeader("Authorization", "Basic ZGV2MjAxNTp0ZW1wb2RldjIwMTU=")
+											},
+											success: function(re) {
+												if(typeof re.inserted !== "undefined") {
+													$('.list-komentar').prepend('<li><div class="block-komentator"><div class="nama"><a href="#">' + e.nama_depan + '</a></div><div class="tanggal">' + re.inserted + '</div></div><p style="margin-left:0px" class="isi">' + text_komentar + '</p></li>');
+												}
+												$('.komen-input').val('');
+												var kc = $('.komentarCount').html();
+												var kc= kc.replace("(", "");
+												var kc= kc.replace(")", "");
+												var kc = parseInt(kc);
+												$('.komentarCount').html('(' + (kc+1) + ')');
+											}
+										});
+									}
+								} else { // Jika gagal dapatkan nama
+									$('.auth-komentar').html('');
+									$('.auth-komentar').html('<div class="block-profil" style="margin-bottom:0;">' +
+																'<input type="text" class="form inputUsername" placeholder="Email Tempo ID" style="width:45.8%; float:left; margin-right:10px;">' +
+																'<input type="password" class="form inputPassword" placeholder="Password Tempo ID" style="width:45.8%;">' +
+															'</div>');
+									// Top login
+									$('.top-space-login').html('');
+									$('.top-space-login').html('<ul>' +
+											'<li><span class="user-login"></span>Login' +
+												'<ul>' +
+													'<li>' +
+														'<div class="m10-t"><input type="text" class="login-passwd usernameTop" placeholder="login"/></div>' +
+														'<input type="password" class="login-passwd passwordTop" placeholder="password"/>' +
+														'<button class="login-button loginTop">Login!</button>' +
+													'</li>' +
+												'</ul>' +
+											'</li>' +
+											'<li><a href="http://langganan.tempo.co/registrasi.php" class="fade"><span class="user-register"></span>Register</a></li>');
+									$('.sendComment').show();
+									loginTop();
+								}
+							}
+						});
+					} else { // Jika login gagal
+						login_border_red();
+						$('.sendComment').show();
+					}
+				}
+			});
+		}
+	} else { // Jika sudah ada token maka cek keabsahan token
+		$.ajax({
+			type: "POST",
+			url: "/rest/auth/sso.json",
+			dataType: "JSON",
+			data:{"token":tempoToken},
+			beforeSend: function(a) {
+				a.setRequestHeader("Authorization", "Basic ZGV2MjAxNTp0ZW1wb2RldjIwMTU=")
+			},
+			success: function(e) {
+				if(typeof e.email !== undefined) { // Jika token valid
+					// Dapatkan Nama
+					$.ajax({
+						type: "POST",
+						url: "/rest/auth/sso.json",
+						dataType: "JSON",
+						data:{"token":tempoToken},
+						beforeSend: function(a) {
+							a.setRequestHeader("Authorization", "Basic ZGV2MjAxNTp0ZW1wb2RldjIwMTU=")
+						},
+						success: function(e) {
+							if(typeof e.email !== undefined) { // Jika berhasil dapatkan nama
+								$('.auth-komentar').html('');
+								$('.auth-komentar').html('<div class="block-profil">' +
+															'<div class="nama-profil"><a href="#" title="' + e.nama_depan + '">' + e.nama_depan + '</a></div>' +
+															'<ul class="profil-link">' +
+																'<li><a target="_blank" href="http://langganan.tempo.co/profil?email=' + e.email + '">Edit Profil</a></li>' +
+																'<li><a target="_blank" href="http://indonesiana.tempo.co/' + e.username + '">Profil Indonesiana</a></li>' +
+																'<li><a target="_blank" href="http://indonesiana.tempo.co/create_text">Tulis Indonesiana</a></li>' +
+																'<li><a href="#" class="logoutComment">Keluar</a></li>' +
+															'</ul>' +
+														'</div>');
+								buttonLogout();
+								$('.top-space-login').html('');
+								$('.top-space-login').html('<ul>' +
+																'<li>' + e.nama_depan +
+																	'<ul>' +
+																		'<li style="height: 10px;"><a href="http://langganan.tempo.co/profil?email=' + e.email + '">Profil</a></li>' +
+																		'<li style="height: 10px; padding-bottom: 20px;"><a href="#" class="buttonTopLogout">Logout</a></li>' +
+																	'</ul>' +
+																'</li>');
+								buttonLogoutTop();
+								// Cek apakah form isi komentar kosong
+								var text_komentar = $('.komen-input').val();
+								var hdType = $('.hdkomentarType').val();
+								var hdId = $('.hdkomentarId').val();
+								var hdMod = $('.hdkomentarMod').val();
+								if(text_komentar == '') { // Jika Komentar kosong
+									text_border_red();
+									$('.sendComment').show();
+								} else { // Jika komentar terisi maka post komentar
+									var dataPostKomentar = {};
+									dataPostKomentar[hdType] = hdId;
+									dataPostKomentar["token"] = tempoToken;
+									dataPostKomentar["komentar"] = text_komentar;
+									if(hdMod != '') {
+										dataPostKomentar["mod"] = hdMod;
+									}
+									$.ajax({
+										type: "POST",
+										url: "/rest/berita/komentar.json",
+										dataType: "JSON",
+										data:dataPostKomentar,
+										beforeSend: function(a) {
+											a.setRequestHeader("Authorization", "Basic ZGV2MjAxNTp0ZW1wb2RldjIwMTU=")
+										},
+										success: function(re) {
+											if(typeof re.inserted !== "undefined") {
+												$('.list-komentar').prepend('<li><div class="block-komentator"><div class="nama"><a href="#">' + e.nama_depan + '</a></div><div class="tanggal">' + re.inserted + '</div></div><p style="margin-left:0px" class="isi">' + text_komentar + '</p></li>');
+											}
+											$('.komen-input').val('');
+											var kc = $('.komentarCount').html();
+											var kc= kc.replace("(", "");
+											var kc= kc.replace(")", "");
+											var kc = parseInt(kc);
+											$('.komentarCount').html('(' + (kc+1) + ')');
+											$('.sendComment').show();
+										}
+									});
+								}
+							} else { // Jika gagal dapatkan nama
+								$('.auth-komentar').html('');
+								$('.auth-komentar').html('<div class="block-profil" style="margin-bottom:0;">' +
+															'<input type="text" class="form inputUsername" placeholder="Email Tempo ID" style="width:45.8%; float:left; margin-right:10px;">' +
+															'<input type="password" class="form inputPassword" placeholder="Password Tempo ID" style="width:45.8%;">' +
+														'</div>');
+								// Top login
+								$('.top-space-login').html('');
+								$('.top-space-login').html('<ul>' +
+											'<li><span class="user-login"></span>Login' +
+												'<ul>' +
+													'<li>' +
+														'<div class="m10-t"><input type="text" class="login-passwd usernameTop" placeholder="login"/></div>' +
+														'<input type="password" class="login-passwd passwordTop" placeholder="password"/>' +
+														'<button class="login-button loginTop">Login!</button>' +
+													'</li>' +
+												'</ul>' +
+											'</li>' +
+											'<li><a href="http://langganan.tempo.co/registrasi.php" class="fade"><span class="user-register"></span>Register</a></li>');
+								$('.sendComment').show();
+								loginTop();
+							}
+						}
+					});
+					
+					
+					
+				} else { // Jika token invalid
+					// Tampilkan semua form login
+					$('.auth-komentar').html('');
+					$('.auth-komentar').html('<div class="block-profil" style="margin-bottom:0;">' +
+												'<input type="text" class="form inputUsername" placeholder="Email Tempo ID" style="width:45.8%; float:left; margin-right:10px;">' +
+												'<input type="password" class="form inputPassword" placeholder="Password Tempo ID" style="width:45.8%;">' +
+											'</div>');
+					// Top login
+					$('.top-space-login').html('');
+					$('.top-space-login').html('<ul>' +
+											'<li><span class="user-login"></span>Login' +
+												'<ul>' +
+													'<li>' +
+														'<div class="m10-t"><input type="text" class="login-passwd usernameTop" placeholder="login"/></div>' +
+														'<input type="password" class="login-passwd passwordTop" placeholder="password"/>' +
+														'<button class="login-button loginTop">Login!</button>' +
+													'</li>' +
+												'</ul>' +
+											'</li>' +
+											'<li><a href="http://langganan.tempo.co/registrasi.php" class="fade"><span class="user-register"></span>Register</a></li>');
+					$('.sendComment').show();
+					loginTop();
+				}
+			}
+		});
+	}
+})
+});
+function login_border_red() {
+	$('.inputUsername').css('border-color','red');
+	$('.inputPassword').css('border-color','red');
+}
+function all_no_border() {
+	$('.inputUsername').css('border-color','');
+	$('.inputPassword').css('border-color','');
+	$('.komen-input').css('border-color','');
+}
+function text_border_red() {
+	$('.komen-input').css('border-color','red');
+}
+// Fungsi untuk cek login
+function checkLogin() {
+	var tempoToken = docCookies.getItem('tempoToken');
+	if(tempoToken === null || tempoToken == '') { // Jika blm login
+		$('.auth-komentar').html('');
+		$('.auth-komentar').html('<div class="block-profil" style="margin-bottom:0;">' +
+									'<input type="text" class="form inputUsername" placeholder="Email Tempo ID" style="width:45.8%; float:left; margin-right:10px;">' +
+									'<input type="password" class="form inputPassword" placeholder="Password Tempo ID" style="width:45.8%;">' +
+								'</div>');
+		// Top login
+		$('.top-space-login').html('');
+		$('.top-space-login').html('<ul>' +
+											'<li><span class="user-login"></span>Login' +
+												'<ul>' +
+													'<li>' +
+														'<div class="m10-t"><input type="text" class="login-passwd usernameTop" placeholder="login"/></div>' +
+														'<input type="password" class="login-passwd passwordTop" placeholder="password"/>' +
+														'<button class="login-button loginTop">Login!</button>' +
+													'</li>' +
+												'</ul>' +
+											'</li>' +
+											'<li><a href="http://langganan.tempo.co/registrasi.php" class="fade"><span class="user-register"></span>Register</a></li>');
+		loginTop();
+	} else { // Jika sudah login
+		getName(tempoToken);
+	}
+}
+</script>
+<script>
+	jQuery(document).ready(function() {
+		
+		// Mengambil id dari url
+		var this_link = location.href;
+		var split_link = this_link.split("/");
+		var idnews = '';
+		if(typeof split_link[8] !== undefined) {
+			idnews = split_link[8].substring(3);
+		}
+		get_komentar(idnews, 1);
+		// Check login
+		checkLogin();
+		// Hide Tab Komentar Tempo
+		$('.komentar-inside').hide();
+		$('.hal-komentar').hide();
+		// Load gambar loadmore gif
+		$(["https://cdn.tmpo.co/web/teco/images/tempo-loading-50.gif"]).preload();
+		
+		var getAdd = getPHP('add'); 
+		if(getAdd != '' && getAdd == 'crowdy') {
+			$('.addcrowdy').append('<div style="width: 100%; height: 300px;" data-crowdynews-widget="Tempo/metro-horizontal-widget">' + unescape('%3Cscript src="//widget.crowdynews.com/js/widget.js" async="true" %3E%3C/script%3E') + '</div>');
+		}
+		
+	$('.fb-comment-btn').click(function() {
+	$('.komentar-inside').hide();
+	$('.hal-komentar').hide();
+	$('.fb-comments').show();
+		return false;
+	})
+	$('.tempo-comment-btn').click(function() {
+	$('.fb-comments').hide();
+	$('.komentar-inside').show();
+	$('.hal-komentar').show();
+	return false;
+})
+	});
+	// Fungsi untuk load gambar sync
+	$.fn.preload = function() {
+		this.each(function() {
+			$("<img/>")[0].src = this
+		})
+	};
+	function getPHP(name) {
+		name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+		var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+		    results = regex.exec(location.search);
+		return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+	}
+</script> 
+<script type="text/javascript">
+	
+	$('#daerah').hover( function(){ 
+	  $("#sub_daerah").css("display", "block"); 
+	  $("#sub_daerah").css("background-color", "#a71c2c"); 
+	}, function(){
+	  $("#sub_daerah").css("display", "none");
+	});
+
+</script>
+
