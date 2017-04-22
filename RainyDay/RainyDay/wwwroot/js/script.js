@@ -36,11 +36,24 @@
     setTimeout(ShowTime, 1000);
 }
 
-var timer;
+var message_timer;
+var animation_timer;
 
 function ClearMessage() {
-    $('message').text(""); // clear update messages
+    $('#message').text(""); // clear update messages
     clearTimeout(message_timer); // clear timeout
+}
+
+function Animation(dots)
+{
+    if (dots == 4) dots = 1;
+
+    var s = "Updating RSS";
+    for (i = 1; i <= dots; i++) s += ".";
+
+    $('#message').text(s); // print updating message
+
+    animation_timer = setTimeout(function () { Animation(dots + 1); }, 1000); // repeat animation every 1s
 }
 
 $(document).ready( // when jQuery and HTML document has loaded
@@ -69,7 +82,7 @@ $(document).ready( // when jQuery and HTML document has loaded
 
         $('#updater').click( // when update button clicked
             function () {
-                $('#message').text("Updating RSS. This may take a while."); // change status to updating
+                $('#message').text("Updating RSS"); // change status to updating
 
                 $.ajax({
                     url: '/Home/StartUpdate', // controller to handle ajax, /ControllerName/MethodName
@@ -80,16 +93,29 @@ $(document).ready( // when jQuery and HTML document has loaded
                             var h = d.getHours();
                             var m = d.getMinutes();
 
-                            var s = "RSS updated. Last udpate on " + h + ":" + m; // show message and last update time
+                            var hours = '';
+                            var minutes = '';
+
+                            if (h < 10) hours += '0';
+                            hours += h;
+
+                            if (m < 10) minutes += '0';
+                            minutes += m;
+
+                            var s = "RSS updated. Last update on " + hours + ":" + minutes; // show message and last update time
                             $('#message').text(s); // change update message
+                            clearTimeout(animation_timer); // stop animation
                         },
                     error: // if server does not responds with HTTP 200 OK
                         function () {
-                            $('message').text("Unable to update RSS. Please try again later."); // show error message
-                            timer = setTimeout(ClearMessage, 3000); // hide message in 3s
+                            $('#message').text("Unable to update RSS. Please try again later."); // show error message
+                            clearTimeout(animation_timer); // stop animation
+                            message_timer = setTimeout(ClearMessage, 3000); // hide message in 3s
                         }
                     }
                 );
+
+                animation_timer = setTimeout(function () { Animation(1); }, 1000); // play animation in 1s
             }
         );
     }

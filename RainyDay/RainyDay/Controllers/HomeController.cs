@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Xml;
 using System.Web.Script.Serialization;
 using RainyDay.Models;
+using RainyDay;
 
 namespace RainyDay.Controllers
 {
@@ -59,6 +60,8 @@ namespace RainyDay.Controllers
 
             string news_json = new JavaScriptSerializer().Serialize(news_list); // convert List of News to JSON string
             System.IO.File.WriteAllText("News.json", news_json); // write JSON string to JSON file
+
+            Parser.hello();
 
             return;
         }
