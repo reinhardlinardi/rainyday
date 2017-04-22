@@ -10,3 +10,7 @@ D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\GetNews.pdb
 D:\Rachel\rainyday\GetNews\GetNews\obj\Debug\GetNews.exe
 D:\Rachel\rainyday\GetNews\GetNews\obj\Debug\GetNews.pdb
 D:\Rachel\rainyday\GetNews\GetNews\obj\Debug\GetNews.csprojResolveAssemblyReference.cache
+D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\ParseHTML.cs
+D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.dll
+D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.pdb
+D:\Rachel\rainyday\GetNews\GetNews\bin\Debug\HtmlAgilityPack.xml

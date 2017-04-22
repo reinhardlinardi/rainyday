@@ -25,8 +25,10 @@ public class Algorithm
             if (posn == -1)
                 Console.WriteLine("Pattern not found");
             else
+            {
                 Console.WriteLine("Pattern starts at position " + posn);
                 Console.WriteLine("Pattern ends at position " + (posn + pattern.Length - 1));
+            }
         }
         else if (choice == 2)
         {
@@ -34,8 +36,10 @@ public class Algorithm
             if (posn == -1)
                 Console.WriteLine("Pattern not found");
             else
+            {
                 Console.WriteLine("Pattern starts at position " + posn);
                 Console.WriteLine("Pattern ends at position " + (posn + pattern.Length - 1));
+            }
         }
         else if (choice == 3)
         {   
@@ -162,8 +166,8 @@ public class Algorithm
         expr = System.Text.RegularExpressions.Regex.Replace(pattern,@"\s+","(?:\\s+[^\\s]+)*\\s+");
     }
 
-    static void Main(string[] args) 
+    /*static void Main(string[] args) 
     {
         Algorithm kmp = new Algorithm();
-    }
+    }*/
 }

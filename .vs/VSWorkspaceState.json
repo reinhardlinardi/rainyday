@@ -4,8 +4,12 @@
     "\\GetNews",
     "\\GetNews\\GetNews",
     "\\GetNews\\GetNews\\bin",
-    "\\GetNews\\GetNews\\bin\\Debug"
+    "\\GetNews\\GetNews\\bin\\Debug",
+    "\\GetNews\\GetNews\\Properties",
+    "\\RainyDay",
+    "\\RainyDay\\RainyDay",
+    "\\src"
   ],
-  "SelectedNode": "\\GetNews\\GetNews\\Algorithm.cs",
+  "SelectedNode": "\\GetNews\\GetNews.sln",
   "PreviewInSolutionExplorer": false
 }

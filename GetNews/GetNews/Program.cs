@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Xml;
-using System.ServiceModel.Syndication;
-using System.Linq;
 
 namespace GetNews
 {
@@ -41,9 +39,9 @@ namespace GetNews
             //Insert Algorithm here
             Algorithm kmp = new Algorithm();
 
+            
             //Console.WriteLine("Press any key to continue");
             //Console.ReadKey();
-
         }*/
     }
 }
