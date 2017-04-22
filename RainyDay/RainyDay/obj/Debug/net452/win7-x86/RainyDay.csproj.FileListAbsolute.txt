@@ -101,3 +101,4 @@ D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\RainyDay\Rain
 D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\RainyDay\RainyDay\obj\Debug\net452\win7-x86\RainyDay.AssemblyInfo.cs
 D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\RainyDay\RainyDay\obj\Debug\net452\win7-x86\RainyDay.exe
 D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\RainyDay\RainyDay\obj\Debug\net452\win7-x86\RainyDay.pdb
+D:\Reinhard\ITB\IF\Semester 4\Tubes\Stima\News Aggregator\rainyday\RainyDay\RainyDay\obj\Debug\net452\win7-x86\RainyDay.csprojResolveAssemblyReference.cache
