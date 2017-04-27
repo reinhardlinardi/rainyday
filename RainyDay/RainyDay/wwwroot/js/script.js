@@ -56,6 +56,23 @@ function Animation(dots)
     animation_timer = setTimeout(function () { Animation(dots + 1); }, 1000); // repeat animation every 1s
 }
 
+function SendKeyword() {
+    var keyword_val = $('#keyword').val(); // get value of keyword
+    var algorithm_val = $('#algorithm').val(); // get value of algorithm
+
+    $.ajax({
+        url: '/Home/SearchKeyword', // send to Home Controller, method SearchKeyword
+        type: 'POST', // method = POST
+        dataType: 'text', // data = text
+        data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
+        success:
+            function (result) {
+                $('#message').text(result);
+            }
+        }
+    );
+}
+
 $(document).ready( // when jQuery and HTML document has loaded
     function () {
         ShowTime(); // show current time
@@ -99,24 +116,7 @@ $(document).ready( // when jQuery and HTML document has loaded
             }
         );
 
-        /*
-        $('#keyword').change( // add event handler for element with id='keyword' (CSS selector) on change
-            function () {
-                var value = $(this).val(); // get value from input element, this = current element
-
-                $.ajax( { // send ajax async HTTP request
-                    url: '/Home/HandleAjax', // target url, in this case : /ControllerName/HandlerMethod
-                    type: 'POST', // HTTP method : POST
-                    dataType: 'text', // data type : text
-                    data: { query : value }, // data to be sent : text input, key = parameter name in controller, value = data value
-                    success: // if ajax request success, server response with HTTP 200 OK
-                        function (response_data) { // received data : response_data
-                            $('#your_keyword').text(response_data); // change content of element with id = "your_keyword" to response_data
-                        }
-                    } 
-                );
-            }
-        );
-        */
+        $('#keyword').keyup(SendKeyword); // when keyword changes, search keyword
+        $('#algorithm').change(SendKeyword); // when algorithm changes, search keyword
     }
 );
