@@ -116,7 +116,8 @@ namespace RainyDay
 
                     raw_news = Regex.Replace(raw_news, "<.+>", "", RegexOptions.Singleline); // remove remaining tag
                     raw_news = Regex.Replace(raw_news, "(?<=\\.)\\s*\\([a-z]+\\)", ""); // remove editor info
-                    raw_news = Regex.Replace(raw_news, "\\n", " "); // replace all newline with spaces.
+                    raw_news = Regex.Replace(raw_news, "(\\n|&nbsp;)", " "); // replace all newline with spaces.
+                    raw_news = Regex.Replace(raw_news, "&[^;]+;", ""); // remove all & character
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
@@ -130,7 +131,25 @@ namespace RainyDay
                 }
                 else if (Regex.IsMatch(news_link, tempo)) // if website is tempo
                 {
+                    string raw_news;
+                    Match news_match;
 
+                    string tempo_regex = "<!-- end block display -->(.+)<!-- end artikel -->";
+                    news_match = Regex.Match(page_html, tempo_regex, RegexOptions.Singleline);
+                    raw_news = news_match.Groups[1].Value;
+
+                    raw_news = Regex.Replace(raw_news, "<[^>]+>", "", RegexOptions.Singleline); // remove remaining tag
+                    raw_news = Regex.Replace(raw_news, "TEMPO[^-]+-\\s*", ""); // remove header
+                    raw_news = Regex.Replace(raw_news, "(\\n|&nbsp;)", " "); // replace all newline with spaces
+                    raw_news = Regex.Replace(raw_news, "(?<=\\.)(\\s*[A-Z]+)*\\s*$", ""); // remove editor
+                    raw_news = Regex.Replace(raw_news, "&[^;]+;", ""); // remove all & character
+
+                    string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
+
+                    _news.content = formatted_news;
+                    news_list.Add(_news); // add to final news list
+
+                    all_text += formatted_news + "\n";
                 }
                 else if (Regex.IsMatch(news_link, detik)) // if website is detik
                 {

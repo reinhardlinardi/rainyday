@@ -1,3 +1,1 @@
-﻿http://rss.viva.co.id/get/all
-http://rss.detik.com/index.php/detikcom
-https://www.tempo.co/rss/terkini
+﻿http://tempo.co/rss/terkini
