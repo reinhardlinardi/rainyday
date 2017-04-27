@@ -66,8 +66,8 @@ function SendKeyword() {
         dataType: 'text', // data = text
         data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
         success:
-            function (result) {
-                $('#message').text(result);
+        function (result) {
+            $('#news_feed').append(result);
             }
         }
     );
