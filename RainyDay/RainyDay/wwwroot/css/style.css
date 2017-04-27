@@ -132,6 +132,7 @@ img.logo {
 #search_and_update {
     /* Black area below navigation bar */
     background-color: #111111;
+    overflow: hidden;
     top: 0;
     left: 0;
     height: 25%;
@@ -260,4 +261,17 @@ div img.form_logo {
     color: white;
     font-family: "Tekton";
     font-size: 18px;
+}
+
+div.news_feed {
+    margin-top: 150px;
+}
+
+div.news_content {
+    position: relative;
+    height: auto;
+    color: white;
+    margin: 20px 0 20px 0;
+    padding: 20px;
+    z-index: -5;
 }
