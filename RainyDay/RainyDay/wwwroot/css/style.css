@@ -102,6 +102,30 @@ img.logo {
     color: white;
 }
 
+/* About Rainy Day */
+#about {
+    text-align: center;
+    text-decoration: underline;
+    font-family: "Tekton";
+    font-weight: 100;
+    font-size: 22px;
+    color: white;
+}
+
+/* Team Description */
+#teamdesc {
+    padding-right: 200px;
+    padding-left: 200px;
+    text-align: justify;
+    text-justify: inter-word;
+    font-weight: 100;
+    font-size: 18px;
+    color: white;
+}
+
+#about_us {
+    padding-top: 500px;
+}
 
 /* Search page */
 
