@@ -36,5 +36,11 @@ namespace RainyDay.Controllers
 
             return;
         }
+
+        [HttpPost]
+        public IActionResult SearchKeyword(string keyword, string algorithm)
+        {
+            return Content("Keyword = " + keyword + ", Algorithm = " + algorithm);
+        }
     }
 }

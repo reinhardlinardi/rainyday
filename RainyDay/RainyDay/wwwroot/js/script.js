@@ -57,7 +57,20 @@ function Animation(dots)
 }
 
 function SendKeyword() {
-    $('#message').text("Changed");
+    var keyword_val = $('#keyword').val(); // get value of keyword
+    var algorithm_val = $('#algorithm').val(); // get value of algorithm
+
+    $.ajax({
+        url: '/Home/SearchKeyword',
+        type: 'POST',
+        dataType: 'text',
+        data: { keyword: keyword_val, algorithm: algorithm_val },
+        success:
+            function (result) {
+                $('#message').text(result);
+            }
+        }
+    );
 }
 
 $(document).ready( // when jQuery and HTML document has loaded
