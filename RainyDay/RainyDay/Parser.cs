@@ -34,22 +34,25 @@ namespace RainyDay
                 try
                 {
                     xml_reader = XmlReader.Create(url); // read xml from specified URL
+                    xml_doc.Load(xml_reader); // create xml document
                 }
                 catch(WebException w)
                 {
                     continue; // skip URL
                 }
-
-                xml_doc.Load(xml_reader); // create xml document
+                catch(XmlException x)
+                {
+                    continue; // skip URL
+                }
+                
                 XmlNodeList nodes = xml_doc.SelectNodes("//rss/channel/item"); // get all <item> as node list using XPath
-
                 int counter = 0;
 
                 foreach (XmlNode node in nodes) // for each <item>
                 {
                     counter++;
 
-                    if (counter <= 20)
+                    if (counter <= max) // limit news
                     {
                         XmlNode title = node.SelectSingleNode("title"); // get news title using XPath
                         XmlNode pubDate = node.SelectSingleNode("pubDate"); // get news date using XPath
@@ -75,12 +78,13 @@ namespace RainyDay
             string viva = "viva\\.co\\.id";
             string antara = "antaranews\\.com";
             string tempo = "www\\.tempo\\.co";
-            string detik = "rss\\.detik\\.com";
+            string detik = "detik\\.com";
 
             // Web Client to download HTML
             WebClient webclient = new WebClient();
             webclient.Encoding = System.Text.Encoding.UTF8; // set encoding to UTF-8
             string page_html;
+            string all_text = "";
             
             foreach (News _news in raw_news_list)
             {
@@ -102,24 +106,24 @@ namespace RainyDay
                     Match news_match;
 
                     // get news
-                    string viva_news_regex1 = "<span itemprop=\"description\"><p><strong>VIVA.co.id</strong>\\s*–\\s*(.+)";
+                    string viva_news_regex1 = "<span itemprop=\"description\"><p><strong>VIVA\\.co\\.id</strong>\\s*\\S+\\s*(.+)";
                     news_match = Regex.Match(page_html, viva_news_regex1, RegexOptions.Singleline); 
                     raw_news = news_match.Groups[1].Value;
 
-                    string viva_news_regex2 = "^(.+)</p>\\s*</span>";
+                    string viva_news_regex2 = "^(.+)(?:\\s*\\(.+\\))?</p>\\s*</span>";
                     news_match = Regex.Match(raw_news, viva_news_regex2, RegexOptions.Singleline);
                     raw_news = news_match.Groups[1].Value;
 
                     raw_news = Regex.Replace(raw_news, "<.+>", "", RegexOptions.Singleline); // remove remaining tag
-                    raw_news = Regex.Replace(raw_news, "\n", " ", RegexOptions.Singleline); //replace all newline with spaces.
+                    raw_news = Regex.Replace(raw_news, "(?<=\\.)\\s*\\([a-z]+\\)", ""); // remove editor info
+                    raw_news = Regex.Replace(raw_news, "\\n", " "); // replace all newline with spaces.
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
                     _news.content = formatted_news;
                     news_list.Add(_news); // add to final news list
 
-                    System.IO.File.AppendAllText("tes.txt",formatted_news);
-                    System.IO.File.AppendAllText("tes.txt", "\n");
+                    all_text += formatted_news + "\n";
                 }
                 else if (Regex.IsMatch(news_link, antara)) // if website is antara
                 {
@@ -130,8 +134,30 @@ namespace RainyDay
                 }
                 else if (Regex.IsMatch(news_link, detik)) // if website is detik
                 {
+                    string raw_news;
+                    Match news_match;
 
+                    // get news
+                    string detik_regex1 = "<div class=\"detail_text\".+</b>\\s*\\S+\\s*(.+)";
+                    news_match = Regex.Match(page_html, detik_regex1, RegexOptions.Singleline);
+                    raw_news = news_match.Groups[1].Value;
+
+                    string detik_regex2 = "(.+)$";
+                    news_match = Regex.Match(raw_news, detik_regex2);
+                    raw_news = news_match.Groups[1].Value;
+
+                    raw_news = Regex.Replace(raw_news, "<.+>", "", RegexOptions.Singleline); // remove remaining tag
+                    raw_news = Regex.Replace(raw_news, "\\n", " "); // replace all newline with spaces.
+
+                    string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
+
+                    _news.content = formatted_news;
+                    news_list.Add(_news); // add to final news list
+
+                    all_text += formatted_news + "\n";
                 }
+
+                System.IO.File.WriteAllText("test.txt", all_text);
             }
         }
 
