@@ -59,26 +59,6 @@ function Animation(dots)
 $(document).ready( // when jQuery and HTML document has loaded
     function () {
         ShowTime(); // show current time
-        /*
-        $('#keyword').change( // add event handler for element with id='keyword' (CSS selector) on change
-            function () {
-                var value = $(this).val(); // get value from input element, this = current element
-
-                $.ajax( { // send ajax async HTTP request
-                    url: '/Home/HandleAjax', // target url, in this case : /ControllerName/HandlerMethod
-                    type: 'POST', // HTTP method : POST
-                    dataType: 'text', // data type : text
-                    data: { query : value }, // data to be sent : text input, key = parameter name in controller, value = data value
-                    success: // if ajax request success, server response with HTTP 200 OK
-                        function (response_data) { // received data : response_data
-                            $('#your_keyword').text(response_data); // change content of element with id = "your_keyword" to response_data
-                        }
-                    } 
-                );
-            }
-        );
-        */
-        // update feed and show progress
 
         $('#updater').click( // when update button clicked
             function () {
@@ -118,5 +98,25 @@ $(document).ready( // when jQuery and HTML document has loaded
                 animation_timer = setTimeout(function () { Animation(1); }, 1000); // play animation in 1s
             }
         );
+
+        /*
+        $('#keyword').change( // add event handler for element with id='keyword' (CSS selector) on change
+            function () {
+                var value = $(this).val(); // get value from input element, this = current element
+
+                $.ajax( { // send ajax async HTTP request
+                    url: '/Home/HandleAjax', // target url, in this case : /ControllerName/HandlerMethod
+                    type: 'POST', // HTTP method : POST
+                    dataType: 'text', // data type : text
+                    data: { query : value }, // data to be sent : text input, key = parameter name in controller, value = data value
+                    success: // if ajax request success, server response with HTTP 200 OK
+                        function (response_data) { // received data : response_data
+                            $('#your_keyword').text(response_data); // change content of element with id = "your_keyword" to response_data
+                        }
+                    } 
+                );
+            }
+        );
+        */
     }
 );
