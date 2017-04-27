@@ -121,13 +121,33 @@ namespace RainyDay
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
-                    _news.content = formatted_news;
-                    news_list.Add(_news); // add to final news list
-
-                    all_text += formatted_news + "\n";
+                    if (formatted_news != "") // if formatted news is not empty
+                    {
+                        _news.content = formatted_news;
+                        news_list.Add(_news); // add to final news list
+                    }
                 }
                 else if (Regex.IsMatch(news_link, antara)) // if website is antara
                 {
+                    string raw_news;
+                    Match news_match;
+
+                    string antara_regex = "<div id=\"content_news\".+\\(ANTARA News\\)\\s*\\S+\\s*(.+)<p class=\"mt10\">";
+                    news_match = Regex.Match(page_html, antara_regex, RegexOptions.Singleline);
+                    raw_news = news_match.Groups[1].Value;
+
+                    raw_news = Regex.Replace(raw_news, "<[^>]+>", "", RegexOptions.Singleline); // remove remaining tag
+                    raw_news = Regex.Replace(raw_news, "(\\n|&nbsp;)", " "); // replace all newline with spaces
+                    raw_news = Regex.Replace(raw_news, "\\(T\\..+\\)$", "");
+                    raw_news = Regex.Replace(raw_news, "&[^;]+;", ""); // remove all & character
+
+                    string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
+
+                    if (formatted_news != "") // if formatted news is not empty
+                    {
+                        _news.content = formatted_news;
+                        news_list.Add(_news); // add to final news list
+                    }
                 }
                 else if (Regex.IsMatch(news_link, tempo)) // if website is tempo
                 {
@@ -146,10 +166,11 @@ namespace RainyDay
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
-                    _news.content = formatted_news;
-                    news_list.Add(_news); // add to final news list
-
-                    all_text += formatted_news + "\n";
+                    if (formatted_news != "") // if formatted news is not empty
+                    {
+                        _news.content = formatted_news;
+                        news_list.Add(_news); // add to final news list
+                    }
                 }
                 else if (Regex.IsMatch(news_link, detik)) // if website is detik
                 {
@@ -170,13 +191,12 @@ namespace RainyDay
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
-                    _news.content = formatted_news;
-                    news_list.Add(_news); // add to final news list
-
-                    all_text += formatted_news + "\n";
+                    if (formatted_news != "") // if formatted news is not empty
+                    {
+                        _news.content = formatted_news;
+                        news_list.Add(_news); // add to final news list
+                    }
                 }
-
-                System.IO.File.WriteAllText("test.txt", all_text);
             }
         }
 
