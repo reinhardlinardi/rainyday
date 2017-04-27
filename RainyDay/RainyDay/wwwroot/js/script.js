@@ -61,10 +61,10 @@ function SendKeyword() {
     var algorithm_val = $('#algorithm').val(); // get value of algorithm
 
     $.ajax({
-        url: '/Home/SearchKeyword',
-        type: 'POST',
-        dataType: 'text',
-        data: { keyword: keyword_val, algorithm: algorithm_val },
+        url: '/Home/SearchKeyword', // send to Home Controller, method SearchKeyword
+        type: 'POST', // method = POST
+        dataType: 'text', // data = text
+        data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
         success:
             function (result) {
                 $('#message').text(result);
