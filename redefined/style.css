@@ -1,0 +1,79 @@
+/* Theme font */
+
+@font-face {
+    font-family: "Geometria Light";
+    src: url("geometria-light.otf");
+}
+
+
+/* Common UI : background image */
+
+body {
+    background-image: url("rain.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+/* Common UI : navigation bar */
+
+.navbar {
+    /* Navigation bar container */
+    background-color: black;
+    border-radius: 0;
+}
+
+nav.navbar.navbar-inverse div.container-fluid div.navbar-header a.pull-left.navbar-brand {
+    /* Mini logo in navigation bar */
+    padding-top: 12px;
+}
+
+nav.navbar.navbar-inverse div.container-fluid div.navbar-header a.navbar-brand {
+    /* Website name */
+    font-family: "Geometria Light";
+    color: white;
+    text-decoration: none;
+}
+
+nav.navbar.navbar-inverse div.container-fluid ul.nav.navbar-nav li.active a {
+    /* Active page */
+    font-family: "Geometria Light";
+    color: #00c3ff;
+    text-decoration: none;
+}
+
+nav.navbar.navbar-inverse div.container-fluid ul.nav.navbar-nav li a {
+    /* Passive page */
+    font-family: "Geometria Light";
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    /* Logo container */
+    padding-top: 6%;
+}
+
+#umbrella {
+    /* Umbrella logo */
+    margin: 0 auto;
+}
+
+#rainyday {
+    /* RainyDay text */
+    font-family: "Geometria Light";
+    color: black;
+}
+
+div h4.description {
+    /* Description about RainyDay */
+    font-family: "Geometria Light";
+    color: black;
+}
+
+#start {
+    /* Get Started button */
+    background-color: #00c3ff;
+    color: white;
+    border-style: none;
+}

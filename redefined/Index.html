@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+    <title> Welcome to RainyDay! </title>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand pull-left" href="#"><img src="umbrella_icon.png"></a>
+                <a class="navbar-brand" href="#">RainyDay</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="Index.html">Home</a></li>
+                <li><a href="Search.html">Search</a></li>
+                <li><a href="About.html">About</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id="time">Loading locale time...</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container text-center">
+        <img src="umbrella.png" class="img-responsive" id="umbrella">
+        <h2 id="rainyday">RainyDay</h2>
+
+        <br>
+        <h4 class="description">Find out the world today. Right now, right here, with our real-time news search and news update.</h4>
+
+        <br>
+        <form action="Search.html"><button type="submit" class="btn btn-default" id="start">Get Started ⏩</button></form>
+    </div>
+</body>
+
+</html>

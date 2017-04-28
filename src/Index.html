@@ -15,15 +15,19 @@
 
 <body id="main">
     <ul class="menu">
-        <li class="menu_logo"><img src="~/images/rainyday30.png"></li>
-        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-        <li class="passive">@Html.ActionLink("Search", "Search", "Home")</li>
-        <li id="time"> Loading locale time... </li>
+        <li class="menu_logo"><img src="rainyday30.png"></li>
+        <li class="active">
+            <!-- @Html.ActionLink("Home", "Index", "Home") --><a href="Index.html">Home</a>/li>
+            <li class="passive">
+                <!-- @Html.ActionLink("Search", "Search", "Home") --><a href="Search.html">Search</a></li>
+            <li class="passive">
+                <!-- @Html.ActionLink("About", "About", "Home")--><a href="About.html">About</a></li>
+            <li id="time"> Loading locale time... </li>
     </ul>
 
     <div align="center" vertical-align="middle">
-        <img class="logo" id="logo" src="~/images/rainyday100.png">
-        <img class="logo" src="~/images/rainyday_font.png">
+        <img class="logo" id="logo" src="rainyday100.png">
+        <img class="logo" src="rainyday_font.png">
     </div>
 
     <h3 id="subtitle"> Your daily news solution. </h3>
