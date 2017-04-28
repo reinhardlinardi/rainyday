@@ -67,7 +67,8 @@ function SendKeyword() {
         data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
         success:
         function (result) {
-            $('#news_feed').append(result);
+            $('#news_feed').html(''); // remove all html inside div
+            $('#news_feed').append(result); // append result to div
             }
         }
     );

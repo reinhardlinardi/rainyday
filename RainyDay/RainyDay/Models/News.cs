@@ -13,6 +13,14 @@ namespace RainyDay.Models
         public string content { get; set; } // news content
 
         // Constructor
+        public News()
+        {
+            title = "";
+            date = "";
+            link = "";
+            content = "";
+        }
+
         public News(string _title, string _date, string _link, string _content)
         {
             title = _title;
