@@ -39,8 +39,8 @@
 var message_timer;
 var animation_timer;
 
-function ClearMessage() {
-    $('#message').text(""); // clear update messages
+function ResetMessage() {
+    $('#message').text("Ready"); // reset update messages
     clearTimeout(message_timer); // clear timeout
 }
 
@@ -106,10 +106,10 @@ $(document).ready( // when jQuery and HTML document has loaded
                     },
                     error: // if server does not responds with HTTP 200 OK
                         function() {
-                        $('#message').text("Unable to update RSS."); // show error message
-                        clearTimeout(animation_timer); // stop animation
-                        message_timer = setTimeout(ClearMessage, 3000); // hide message in 3s
-                    }
+                            $('#message').text("Unable to update RSS."); // show error message
+                            clearTimeout(animation_timer); // stop animation
+                            message_timer = setTimeout(ResetMessage, 3000); // hide message in 3s
+                        }
                 });
 
                 animation_timer = setTimeout(function() { Animation(1); }, 1000); // play animation in 1s
@@ -122,6 +122,7 @@ $(document).ready( // when jQuery and HTML document has loaded
             function() {
                 $('#dropdown-button').text($(this).text()); // change text to selection name
                 $('#dropdown-button').append(" <span class=\"caret\"></span>"); // add arrow symbol
+                $('#dropdown-button').val($(this).text()); // change value to selection name
                 SendKeyword();
             }
         );
