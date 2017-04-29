@@ -28,7 +28,7 @@ namespace RainyDay.Controllers
         
         public IActionResult About() //for About.cshtml page
         {
-            return View();
+            return View(); // return ViewResult
         }
         /* Ajax request handlers */
         

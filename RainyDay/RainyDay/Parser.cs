@@ -27,7 +27,7 @@ namespace RainyDay
 
             XmlReader xml_reader;
             XmlDocument xml_doc = new XmlDocument();
-            int max = 5; // maximum number of news
+            int max = 15; // maximum number of news per website
 
             foreach (string url in url_list) // for each URL
             {
@@ -57,7 +57,7 @@ namespace RainyDay
                         string news_title = title.InnerText; // get content from title node
                         string news_date = pubDate.InnerText; // get content from pubDate node
                         string news_link = link.InnerText; // get content from link node
-                        string image_link = "";
+                        string image_link = ""; // news may not contain images
 
                         string viva_regex = "rss\\.viva\\.co\\.id";
                         string antara_regex = "antaranews\\.com/rss";
@@ -190,7 +190,7 @@ namespace RainyDay
                     raw_news = Regex.Replace(raw_news, "<[^>]+>", "", RegexOptions.Singleline); // remove remaining tag
                     raw_news = Regex.Replace(raw_news, "TEMPO[^-]+-\\s*", ""); // remove header
                     raw_news = Regex.Replace(raw_news, "(\\n|&nbsp;)", " "); // replace all newline with spaces
-                    raw_news = Regex.Replace(raw_news, "(?<=\\.|\"|\\|\\?| !)\\s*(\\s*[A-Z\\|\\.]+)*\\s*(Baca:.+)*$", ""); // remove editor
+                    raw_news = Regex.Replace(raw_news, "(?<=\\.|\"|\\|\\?| !)\\s*(\\s*[A-Z\\|\\.]+)*\\s*(Baca:[^\\.]+)*$", ""); // remove editor
                     raw_news = Regex.Replace(raw_news, "&[^;]+;", ""); // remove all & character
                     raw_news = Regex.Replace(raw_news, "^\\s+", ""); // remove trailing spaces at beginning of line 
                     raw_news = Regex.Replace(raw_news, "\\s+$", ""); // remove trailing spaces at end of line
@@ -209,12 +209,8 @@ namespace RainyDay
                     Match news_match;
 
                     // get news
-                    string detik_regex1 = "<div class=\"detail_text\".+</b>\\s*\\S+\\s*(.+)";
-                    news_match = Regex.Match(page_html, detik_regex1, RegexOptions.Singleline);
-                    raw_news = news_match.Groups[1].Value;
-
-                    string detik_regex2 = "(.+)$";
-                    news_match = Regex.Match(raw_news, detik_regex2);
+                    string detik_regex = "<!-- e:pic detail -->\\s*<b>[^<]+</b>\\s*\\S*\\s*(.+)<strong>.+<!-- POLONG -->";
+                    news_match = Regex.Match(page_html, detik_regex, RegexOptions.Singleline);
                     raw_news = news_match.Groups[1].Value;
 
                     raw_news = Regex.Replace(raw_news, "<[^>]+>", "", RegexOptions.Singleline); // remove remaining tag
@@ -235,8 +231,13 @@ namespace RainyDay
 
         public void WriteJSONToFile(string filename)
         {
-            string news_json = new JavaScriptSerializer().Serialize(news_list); // convert List of News to JSON string
-            System.IO.File.WriteAllText(filename, news_json); // write JSON string to JSON file
+            bool news_exist = news_list.Any(); // return true if list contains any element
+
+            if (news_exist) // if list contains any element, update news (prevents data lost)
+            {
+                string news_json = new JavaScriptSerializer().Serialize(news_list); // convert List of News to JSON string
+                System.IO.File.WriteAllText(filename, news_json); // write JSON string to JSON file
+            }
         }
     }
 }
