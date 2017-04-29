@@ -1,27 +1,37 @@
 ﻿<html>
+
 <head>
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" type="text/css" href="~/css/style.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-    <script src="~/js/script.js"></script>
+    <script src="script.js"></script>
 
     <title> RainyDay - About Us </title>
 </head>
+
 <body id="main">
     <ul class="menu">
-        <li class="menu_logo"><img src="~/images/rainyday30.png"></li>
-        <li class="passive">@Html.ActionLink("Home", "Index", "Home")</li>
-        <li class="active">@Html.ActionLink("Search", "Search", "Home")</li>
-        <li class="passive">@Html.ActionLink("About", "About", "Home")</li>
+        <li class="menu_logo"><img src="rainyday30.png"></li>
+        <li class="passive">
+            <!-- @Html.ActionLink("Home", "Index", "Home") -->
+        </li>
+        <li class="active">
+            <!-- @Html.ActionLink("Search", "Search", "Home") -->
+        </li>
+        <li class="passive">
+            <!-- @Html.ActionLink("About", "About", "Home") -->
+        </li>
         <li id="time"> Loading locale time... </li>
     </ul>
 
     <div id="about_us">
         <h2 id="about">About Rainy Day</h2>
-		<p id="teamdesc">Once upon a time, three young developers gathered to finish the last task of the 4<sup>th</sup> semester. They formed a team called "Rainy Day", which is a combination of our names: Rachel, Reinhard, and Wenny. The Great Britain has inspired them. It rains even in the summer. This depicts their working environment: they were always calm, even though there is constant tension coming from various deadlines.</p>
+        <p id="teamdesc">Once upon a time, three young developers gathered to finish the last task of the 4<sup>th</sup> semester. They formed a team called "Rainy Day", which is a combination of our names: Rachel, Reinhard, and Wenny. The Great Britain has inspired them.
+            It rains even in the summer. This depicts their working environment: they were always calm, even though there is constant tension coming from various deadlines.</p>
     </div>
 
 </body>
+
 </html>

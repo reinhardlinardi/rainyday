@@ -23,27 +23,45 @@ body {
     border-radius: 0;
 }
 
-nav.navbar.navbar-inverse div.container-fluid div.navbar-header a.pull-left.navbar-brand {
+nav div.container-fluid div.navbar-header span.pull-left {
     /* Mini logo in navigation bar */
     padding-top: 12px;
 }
 
-nav.navbar.navbar-inverse div.container-fluid div.navbar-header a.navbar-brand {
+nav div.container-fluid div.navbar-header span.navbar-brand {
     /* Website name */
     font-family: "Geometria Light";
     color: white;
     text-decoration: none;
 }
 
-nav.navbar.navbar-inverse div.container-fluid ul.nav.navbar-nav li.active a {
+nav div.container-fluid ul.nav.navbar-nav li a {
+    /* Passive page */
+    font-family: "Geometria Light";
+    color: white;
+    text-decoration: none;
+}
+
+nav div.container-fluid ul.nav.navbar-nav li.nav-item.nav-link a:hover {
+    /* Passive page on mouse over */
+    color: #82dcff;
+    transition: 0.5 s;
+}
+
+nav div.container-fluid ul.nav.navbar-nav li.active a {
     /* Active page */
     font-family: "Geometria Light";
     color: #00c3ff;
     text-decoration: none;
 }
 
-nav.navbar.navbar-inverse div.container-fluid ul.nav.navbar-nav li a {
-    /* Passive page */
+nav div.container-fluid ul.nav.navbar-nav li.nav-item.nav-link.active a:hover {
+    /* Active page on mouse over */
+    color: #00c3ff;
+}
+
+nav div.container-fluid ul.nav.navbar-nav.navbar-right li.nav-item span.navbar-text {
+    /* Current time */
     font-family: "Geometria Light";
     color: white;
     text-decoration: none;
@@ -54,12 +72,12 @@ nav.navbar.navbar-inverse div.container-fluid ul.nav.navbar-nav li a {
     padding-top: 6%;
 }
 
-#umbrella {
-    /* Umbrella logo */
+img.img-responsive {
+    /* All umbrella logo */
     margin: 0 auto;
 }
 
-#rainyday {
+h2.rainyday {
     /* RainyDay text */
     font-family: "Geometria Light";
     color: black;
@@ -76,4 +94,25 @@ div h4.description {
     background-color: #00c3ff;
     color: white;
     border-style: none;
+}
+
+div.row {
+    /* Row container for umbrella icon, RainyDay, about RainyDay */
+    margin-top: 12%;
+}
+
+div.page-logo {
+    /* Container for umbrella icon, RainyDay */
+    border-style: solid;
+    border-color: black;
+    border-right-width: 1px;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+div h4.about {
+    /* Container for about RainyDay */
+    font-family: "Geometria Light";
+    color: black;
 }
