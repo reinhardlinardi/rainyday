@@ -27,7 +27,7 @@ namespace RainyDay
 
             XmlReader xml_reader;
             XmlDocument xml_doc = new XmlDocument();
-            int max = 20; // maximum number of news
+            int max = 5; // maximum number of news
 
             foreach (string url in url_list) // for each URL
             {
@@ -36,11 +36,7 @@ namespace RainyDay
                     xml_reader = XmlReader.Create(url); // read xml from specified URL
                     xml_doc.Load(xml_reader); // create xml document
                 }
-                catch (WebException w)
-                {
-                    continue; // skip URL
-                }
-                catch (XmlException x)
+                catch (Exception e)
                 {
                     continue; // skip URL
                 }
@@ -61,8 +57,37 @@ namespace RainyDay
                         string news_title = title.InnerText; // get content from title node
                         string news_date = pubDate.InnerText; // get content from pubDate node
                         string news_link = link.InnerText; // get content from link node
+                        string image_link = "";
 
-                        News news = new News(news_title, news_date, news_link, ""); // create News object
+                        string viva_regex = "rss\\.viva\\.co\\.id";
+                        string antara_regex = "antaranews\\.com/rss";
+                        string tempo_regex = "tempo\\.co/rss";
+                        string detik_regex = "rss\\.detik\\.com/";
+
+                        if(Regex.IsMatch(url,viva_regex) || Regex.IsMatch(url,detik_regex))
+                        {
+                            XmlNode image = node.SelectSingleNode("enclosure"); // get image url using XPath
+                            if(image != null) image_link = image.Attributes["url"].Value; // get image link from url attribute in <enclosure> tag
+                        }
+                        else if(Regex.IsMatch(url,tempo_regex))
+                        {
+                            XmlNode image = node.SelectSingleNode("image"); // get image url using XPath
+                            if (image != null) image_link = image.InnerText; // get image link from <image> tag
+                        }
+                        else if(Regex.IsMatch(url,antara_regex))
+                        {
+                            XmlNode image = node.SelectSingleNode("description");// get image url using XPath
+                            if (image != null)
+                            {
+                                string description = image.InnerText; // get text from <description> tag
+
+                                string antara_image_regex = "img src=\"(.+)\"";
+                                Match antara_image = Regex.Match(description, antara_image_regex);
+                                image_link = antara_image.Groups[1].Value; // get image url from img src="..."
+                            }
+                        }
+
+                        News news = new News(news_title, news_date, news_link, "", image_link); // create News object
                         raw_news_list.Add(news); // add to news list
                     }
                     else break;
@@ -84,7 +109,6 @@ namespace RainyDay
             WebClient webclient = new WebClient();
             webclient.Encoding = System.Text.Encoding.UTF8; // set encoding to UTF-8
             string page_html;
-            string all_text = "";
 
             foreach (News _news in raw_news_list)
             {
@@ -94,7 +118,7 @@ namespace RainyDay
                 {
                     page_html = webclient.DownloadString(news_link); // download HTML
                 }
-                catch (WebException w)
+                catch (Exception e)
                 {
                     continue; // skip item
                 }
@@ -114,10 +138,12 @@ namespace RainyDay
                     news_match = Regex.Match(raw_news, viva_news_regex2, RegexOptions.Singleline);
                     raw_news = news_match.Groups[1].Value;
 
-                    raw_news = Regex.Replace(raw_news, "<.+>", "", RegexOptions.Singleline); // remove remaining tag
+                    raw_news = Regex.Replace(raw_news, "<[^>]+>", "", RegexOptions.Singleline); // remove remaining tag
                     raw_news = Regex.Replace(raw_news, "(?<=\\.)\\s*\\([a-z]+\\)", ""); // remove editor info
                     raw_news = Regex.Replace(raw_news, "(\\n|&nbsp;)", " "); // replace all newline with spaces.
                     raw_news = Regex.Replace(raw_news, "&[^;]+;", ""); // remove all & character
+                    raw_news = Regex.Replace(raw_news, "^\\s+", ""); // remove trailing spaces at beginning of line 
+                    raw_news = Regex.Replace(raw_news, "\\s+$", ""); // remove trailing spaces at end of line
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
@@ -140,6 +166,9 @@ namespace RainyDay
                     raw_news = Regex.Replace(raw_news, "(\\n|&nbsp;)", " "); // replace all newline with spaces
                     raw_news = Regex.Replace(raw_news, "\\(T\\..+\\)$", "");
                     raw_news = Regex.Replace(raw_news, "&[^;]+;", ""); // remove all & character
+                    raw_news = Regex.Replace(raw_news, "\\s*(Baca juga:.+)*$", ""); // remove unnecessary article
+                    raw_news = Regex.Replace(raw_news, "^\\s+", ""); // remove trailing spaces at beginning of line 
+                    raw_news = Regex.Replace(raw_news, "\\s+$", ""); // remove trailing spaces at end of line
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
@@ -161,8 +190,10 @@ namespace RainyDay
                     raw_news = Regex.Replace(raw_news, "<[^>]+>", "", RegexOptions.Singleline); // remove remaining tag
                     raw_news = Regex.Replace(raw_news, "TEMPO[^-]+-\\s*", ""); // remove header
                     raw_news = Regex.Replace(raw_news, "(\\n|&nbsp;)", " "); // replace all newline with spaces
-                    raw_news = Regex.Replace(raw_news, "(?<=\\.)(\\s*[A-Z]+)*\\s*$", ""); // remove editor
+                    raw_news = Regex.Replace(raw_news, "(?<=\\.|\"|\\|\\?| !)\\s*(\\s*[A-Z\\|\\.]+)*\\s*(Baca:.+)*$", ""); // remove editor
                     raw_news = Regex.Replace(raw_news, "&[^;]+;", ""); // remove all & character
+                    raw_news = Regex.Replace(raw_news, "^\\s+", ""); // remove trailing spaces at beginning of line 
+                    raw_news = Regex.Replace(raw_news, "\\s+$", ""); // remove trailing spaces at end of line
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 
@@ -186,8 +217,10 @@ namespace RainyDay
                     news_match = Regex.Match(raw_news, detik_regex2);
                     raw_news = news_match.Groups[1].Value;
 
-                    raw_news = Regex.Replace(raw_news, "<.+>", "", RegexOptions.Singleline); // remove remaining tag
-                    raw_news = Regex.Replace(raw_news, "\\n", " "); // replace all newline with spaces.
+                    raw_news = Regex.Replace(raw_news, "<[^>]+>", "", RegexOptions.Singleline); // remove remaining tag
+                    raw_news = Regex.Replace(raw_news, "\\n", " "); // replace all newline with spaces
+                    raw_news = Regex.Replace(raw_news, "^\\s+", ""); // remove trailing spaces at beginning of line 
+                    raw_news = Regex.Replace(raw_news, "\\s+$", ""); // remove trailing spaces at end of line
 
                     string formatted_news = Regex.Replace(raw_news, "\\s+", " "); // replace all consecutive whitespaces with a single space
 

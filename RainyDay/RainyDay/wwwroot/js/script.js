@@ -57,18 +57,21 @@ function Animation(dots) {
 
 function SendKeyword() {
     var keyword_val = $('#keyword').val(); // get value of keyword
-    var algorithm_val = $('#algorithm').val(); // get value of algorithm
+    var algorithm_val = $('#dropdown-button').val(); // get value of algorithm
 
+    console.log(algorithm_val);
+    /*
     $.ajax({
         url: '/Home/SearchKeyword', // send to Home Controller, method SearchKeyword
         type: 'POST', // method = POST
         dataType: 'text', // data = text
         data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
         success: function(result) {
-            $('#news_feed').html(''); // remove all html inside div
-            $('#news_feed').append(result); // append result to div
+            //$('#news_feed').html(''); // remove all html inside div
+            //$('#news_feed').append(result); // append result to div
         }
     });
+    */
 }
 
 $(document).ready( // when jQuery and HTML document has loaded
@@ -96,14 +99,14 @@ $(document).ready( // when jQuery and HTML document has loaded
 
                         if (m < 10) minutes += '0';
                         minutes += m;
-
-                        var s = "RSS updated. Last update on " + hours + ":" + minutes; // show message and last update time
+                        
+                        var s = "RSS updated on " + hours + ":" + minutes; // show message and last update time
                         $('#message').text(s); // change update message
                         clearTimeout(animation_timer); // stop animation
                     },
                     error: // if server does not responds with HTTP 200 OK
                         function() {
-                        $('#message').text("Unable to update RSS. Please try again later."); // show error message
+                        $('#message').text("Unable to update RSS."); // show error message
                         clearTimeout(animation_timer); // stop animation
                         message_timer = setTimeout(ClearMessage, 3000); // hide message in 3s
                     }

@@ -11,6 +11,7 @@ namespace RainyDay.Models
         public string date { get; set; } // news date
         public string link { get; set; } // news url
         public string content { get; set; } // news content
+        public string image { get; set; } // image link
 
         // Constructor
         public News()
@@ -19,14 +20,16 @@ namespace RainyDay.Models
             date = "";
             link = "";
             content = "";
+            image = "";
         }
 
-        public News(string _title, string _date, string _link, string _content)
+        public News(string _title, string _date, string _link, string _content, string _image)
         {
             title = _title;
             date = _date;
             link = _link;
             content = _content;
+            image = _image;
         }
     }
 }

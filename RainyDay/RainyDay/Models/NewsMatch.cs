@@ -9,13 +9,13 @@ namespace RainyDay.Models
     {
         public int start { get; set; } // start at index
         public int end { get; set; } // end at index
-        public int isContent { get; set; } // match in content?
+        public int isContent { get; set; } // -1 = tidak ketemu, 0 = di judul, 1 = di beritanya
 
         public NewsMatch()
         {
-            start = -1; // default = not found
+            start = -1;
             end = -1;
-            isContent = -1; // -1 = tidak ketemu, 1 = true, 0 = false
+            isContent = -1;
         }
     }
 }

@@ -46,7 +46,7 @@ nav div.container-fluid ul.nav.navbar-nav li a {
 nav div.container-fluid ul.nav.navbar-nav li.nav-item.nav-link a:hover {
     /* Passive page on mouse over */
     color: #82dcff;
-    transition: 0.5 s;
+    transition: 0.5s;
 }
 
 nav div.container-fluid ul.nav.navbar-nav li.active a {
