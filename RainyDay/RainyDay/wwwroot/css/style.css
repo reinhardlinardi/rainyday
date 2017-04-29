@@ -1,277 +1,187 @@
 /* Theme font */
 
 @font-face {
-    font-family: "Tekton";
-    src: url("Tekton.otf");
+    font-family: "Geometria Light";
+    src: url("geometria-light.otf");
+}
+
+
+/* Common UI : background image */
+
+body {
+    background-image: url("rain.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
 /* Common UI : navigation bar */
 
-ul.menu {
-    /* Horizontal navigation bar */
-    list-style-type: none;
-    top: 0;
-    left: 0;
-    height: 6%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: fixed;
+.navbar {
+    /* Navigation bar container */
     background-color: black;
+    border-radius: 0;
 }
 
-ul.menu li.active,
-ul.menu li.passive {
-    /* All links container */
-    float: left;
+nav div.container-fluid div.navbar-header span.pull-left {
+    /* Mini logo in navigation bar */
+    padding-top: 12px;
 }
 
-ul.menu li.menu_logo {
-    /* Umbrella icon on the left of navigation bar */
-    display: block;
-    float: left;
-    color: white;
-    padding-top: 3px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-ul.menu li a {
-    /* All links */
-    display: block;
-    line-height: 35px;
-    padding-right: 15px;
-    padding-left: 15px;
+nav div.container-fluid div.navbar-header span.navbar-brand {
+    /* Website name */
+    font-family: "Geometria Light";
     color: white;
     text-decoration: none;
-    font-size: 19px;
-    font-family: "Tekton";
 }
 
-ul.menu li.passive:hover a {
-    /* Passive link on mouse over */
-    color: #fffd99;
-}
-
-ul.menu li.active a {
-    /* Active link */
-    color: #d1ff99;
-}
-
-#time {
-    /* Time */
-    display: block;
-    height: 100%;
-    float: right;
-    line-height: 38px;
-    padding-right: 10px;
-    padding-left: 10px;
+nav div.container-fluid ul.nav.navbar-nav li a {
+    /* Passive page */
+    font-family: "Geometria Light";
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    font-family: "Tekton";
 }
 
-
-/* Home page */
-
-#main {
-    /* Body of home page */
-    background-image: url("newspapers.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+nav div.container-fluid ul.nav.navbar-nav li.nav-item.nav-link a:hover {
+    /* Passive page on mouse over */
+    color: #82dcff;
+    transition: 0.5 s;
 }
 
-img.logo {
-    /* Umbrella icon and RainyDay in the center of the page */
-    margin-top: 150px;
+nav div.container-fluid ul.nav.navbar-nav li.active a {
+    /* Active page */
+    font-family: "Geometria Light";
+    color: #00c3ff;
+    text-decoration: none;
 }
 
-#logo {
-    /* Umbrella icon only */
-    padding-left: 80px;
+nav div.container-fluid ul.nav.navbar-nav li.nav-item.nav-link.active a:hover {
+    /* Active page on mouse over */
+    color: #00c3ff;
 }
 
-#subtitle {
-    /* Text below umbrella icon and RainyDay */
-    text-align: center;
-    font-family: "Tekton";
-    font-weight: 100;
-    font-size: 22px;
+nav div.container-fluid ul.nav.navbar-nav.navbar-right li.nav-item span.navbar-text {
+    /* Current time */
+    font-family: "Geometria Light";
     color: white;
+    text-decoration: none;
 }
 
-/* About Rainy Day */
-#about {
-    text-align: center;
-    text-decoration: underline;
-    font-family: "Tekton";
-    font-weight: 100;
-    font-size: 22px;
+.container {
+    /* Logo container */
+    padding-top: 6%;
+}
+
+img.img-responsive {
+    /* All umbrella logo except form */
+    margin: 0 auto;
+}
+
+h2.rainyday {
+    /* RainyDay text */
+    font-family: "Geometria Light";
+    color: black;
+}
+
+div h4.description {
+    /* Description about RainyDay */
+    font-family: "Geometria Light";
+    color: black;
+}
+
+#start {
+    /* Get Started button */
+    background-color: #00c3ff;
     color: white;
+    border-style: none;
 }
 
-/* Team Description */
-#teamdesc {
-    padding-right: 200px;
-    padding-left: 200px;
-    text-align: justify;
-    text-justify: inter-word;
-    font-weight: 100;
-    font-size: 18px;
-    color: white;
-}
-
-#about_us {
-    padding-top: 200px;
-}
-
-/* Search page */
-
-#search_and_update {
-    /* Black area below navigation bar */
-    background-color: #111111;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    height: 25%;
-    width: 70%;
-    margin: 0;
-    padding: 0;
-    position: fixed;
-    z-index: -1;
-}
-
-div img.form_logo {
-    /* Umbrella icon and RainyDay on the left side of form */
+div img.umbrella-form {
+    /* Umbrella icon in form */
     display: block;
     float: left;
-    margin-top: 70px;
+    padding-left: 20px;
 }
 
-#form_logo {
-    /* Umbrella icon only */
-    margin-left: 50px;
-}
-
-#keyword {
-    /* Keyword input */
-    width: 40%;
-    height: 30px;
-    margin-top: 110px;
-    margin-right: 8px;
+h2.rainyday-form {
+    /* RainyDay text */
+    display: block;
+    float: left;
+    font-family: "Geometria Light";
+    color: black;
     padding-left: 10px;
-    border-style: solid;
-    border-radius: 3px;
-    border-color: #eaecef;
-    transition: 1s;
 }
 
-#keyword:hover {
-    /* Keyword input on mouse over */
-    box-shadow: 0px 0px 15px #0061ff;
-    transition: 0.5s;
+div div form.form-horizontal {
+    /* Form */
+    padding-top: 20px;
 }
 
-#keyword:focus {
-    /* Keyword input on focus */
-    box-shadow: 0px 0px 15px #01b504;
-    transition: 0.5s;
-}
-
-#keyword:not(focus) {
-    /* Keyword input on loses focus */
-    box-shadow: none;
-    transition: 0.5s;
-}
-
-#algorithm {
-    /* Algorithm selection */
-    width: 125px;
-    height: 30px;
-    margin-top: 110px;
-    margin-left: 8px;
-    margin-right: 8px;
-    border-style: solid;
-    border-radius: 3px;
-    border-color: #eaecef;
-    transition: 1s;
-}
-
-#algorithm:hover {
-    /* Algorithm selection on mouse over */
-    box-shadow: 0px 0px 15px #0061ff;
-    transition: 0.5s;
-}
-
-#algorithm:focus {
-    /* Algorithm selection on focus */
-    box-shadow: 0px 0px 15px #01b504;
-    transition: 0.5s;
-}
-
-#algorithm:not(focus) {
-    /* Algorithm selection on loses focus */
-    box-shadow: none;
-    transition: 0.5s;
+#dropdown-button {
+    /* Dropdown button */
+    background-color: #00c3ff;
+    color: white;
 }
 
 #updater {
     /* Update button */
-    background-color: #4286f4;
-    background-image: url("update.png");
+    background-color: #82dcff;
+    background-image: url("sync.png");
     background-repeat: no-repeat;
     background-position: center;
-    border-style: solid;
-    border-color: #4286f4;
-    border-radius: 3px;
-    width: 30px;
-    height: 30px;
-    margin-top: 110px;
-    margin-left: 8px;
-    margin-right: 8px;
-}
-
-#updater:hover {
-    /* Update button on mouse over*/
-    box-shadow: 0px 0px 15px #4286f4;
-    transition: 0.5s;
-}
-
-#update_message {
-    /* Update message container */
-    background-color: #111111;
-    display: block;
-    float: left;
-    margin: 0;
-    padding: 0;
-    top: 0;
-    left: 70%;
-    height: 25%;
-    width: 30%;
-    position: fixed;
-    z-index: -1;
+    width: 35px;
+    height: 35px;
 }
 
 #message {
-    /* Message from updater */
-    margin-top: 115px;
-    margin-left: 10px;
-    color: white;
-    font-family: "Tekton";
-    font-size: 18px;
+    /* Message */
+    font-family: "Geometria Light";
+    color: black;
+    padding-top: 20px;
 }
 
-#news_feed {
-    margin-top: 150px;
-}
-
-div.news_content {
+div.panel {
+    /* Panel for news */
+    left: 10%;
+    width: 80%;
+    top: 10px;
+    bottom: 10px;
     position: relative;
-    height: auto;
-    color: white;
-    margin: 20px 0 20px 0;
-    padding: 20px;
-    z-index: -5;
+}
+
+div.panel div.panel-body div.news-image {
+    display: block;
+    float: left;
+    width: 10%;
+    height: inherit;
+}
+
+div.panel div.panel-body p {
+    /* News content in panel body */
+    display: block;
+    float: left;
+    width: 90%;
+    height: inherit;
+}
+
+div.row.about-page {
+    /* Row container for umbrella icon, RainyDay, about RainyDay */
+    margin-top: 12%;
+}
+
+div.page-logo {
+    /* Container for umbrella icon, RainyDay */
+    border-style: solid;
+    border-color: black;
+    border-right-width: 1px;
+    border-left-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+}
+
+div h4.about {
+    /* Container for about RainyDay */
+    font-family: "Geometria Light";
+    color: black;
 }

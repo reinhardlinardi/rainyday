@@ -1,71 +1,81 @@
 ﻿<html>
 
 <head>
-    <meta charset="utf-8" />
-
-    <link rel="stylesheet" type="text/css" href="~/css/style.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="~/js/script.js"></script>
 
-    <title> RainyDay - Search and Update News! </title>
+    <title> RainyDay | Search </title>
 </head>
 
-<body id="main">
-    <ul class="menu">
-        <li class="menu_logo"><img src="~/images/rainyday30.png"></li>
-        <li class="passive">@Html.ActionLink("Home", "Index", "Home")</li>
-        <li class="active">@Html.ActionLink("Search", "Search", "Home")</li>
-        <li class="passive">@Html.ActionLink("About", "About", "Home")</li>
-        <li id="time"> Loading locale time... </li>
-    </ul>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand pull-left"><img src="~/css/umbrella_icon.png"></span>
+                <span class="navbar-brand">RainyDay</span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="nav-item nav-link">@Html.ActionLink("Home", "Index", "Home")</li>
+                <li class="nav-item nav-link active">@Html.ActionLink("Search", "Search", "Home")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home")</li>
+            </ul>
 
-    <div id="search_and_update">
-        <img class="form_logo" id="form_logo" src="~/images/rainyday80.png">
-        <img class="form_logo" src="~/images/rainyday_font80.png">
-
-        <form>
-            <input type="text" id="keyword" name="keyword" placeholder="Type any keyword here">
-
-            <select id="algorithm" name="algorithm">
-                <option value="KMP"> KMP </option>
-                <option value="Boyer-Moore"> Boyer-Moore </option>
-                <option value="Regex"> Regex </option>
-            </select>
-
-            <input type="button" id="updater" value="">
-        </form>
-    </div>
-
-    <div id="update_message">
-        <h4 id="message"></h4>
-    </div>
-
-    <!-- news content here-->
-    <div id="news_feed">
-        <!--
-            <div class="news_content">
-            <h2>News Headline Here</h2>
-            <h4>URL here</h4>
-            <p> News date here</p>
-            <h3>News content here</h3>
-            <img class="news_picture" src="~/images/rainyday30.png">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><span class="navbar-text" id="time">Loading locale time...</span></li>
+            </ul>
         </div>
-        <div class="news_content">
-            <h2>News Headline Here</h2>
-            <h4>URL here</h4>
-            <p> News date here</p>
-            <h3>News content here</h3>
-            <img class="news_picture" src="~/images/rainyday30.png">
+    </nav>
+
+    <div class="all-container">
+        <div class="row">
+            <div class="col-xs-3">
+                <img class="umbrella-form" src="~/css/umbrella.png">
+                <h2 class="rainyday-form">RainyDay</h2>
+            </div>
+            <div class="col-xs-5">
+                <form class="form-horizontal">
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="keyword" placeholder="Type any keyword here">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdown-button">KMP <span class="caret"></span></button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a class="dropdown-item" href="#">KMP</a></li>
+                                <li><a class="dropdown-item" href="#">Boyer-Moore</a></li>
+                                <li><a class="dropdown-item" href="#">Regex</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-xs-1">
+                <form class="form-horizontal">
+                    <button type="button" class="btn btn-secondary" id="updater"></button>
+                </form>
+            </div>
+            <div class="col-md-3">
+                <h4 id="message">Ready.</h4>
+            </div>
         </div>
-        <div class="news_content">
-            <h2>News Headline Here</h2>
-            <h4>URL here</h4>
-            <p> News date here</p>
-            <h3>News content here</h3>
-            <img class="news_picture" src="~/images/rainyday30.png">
+
+        <!-- Bootstrap panel, for news -->
+        <div class="panel panel-default">
+            <div class="panel-heading">c2e8460bb8b3a623e4194b15aab1f38e0fcfa7f4 &nbsp;&nbsp;&nbsp;&nbsp; 4/29/2017 6:04</div>
+            <div class="panel-body">
+                <div class="news-image"><img src="~/css/umbrella.png" alt="Image"></div>
+                <div>
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. "Sed ut perspiciatis
+                        unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia
+                        voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                </div>
+            </div>
         </div>
-        //-->
+        <!-- End of panel -->
     </div>
 </body>
 

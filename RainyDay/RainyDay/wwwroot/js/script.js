@@ -44,8 +44,7 @@ function ClearMessage() {
     clearTimeout(message_timer); // clear timeout
 }
 
-function Animation(dots)
-{
+function Animation(dots) {
     if (dots == 4) dots = 1;
 
     var s = "Updating RSS";
@@ -53,7 +52,7 @@ function Animation(dots)
 
     $('#message').text(s); // print updating message
 
-    animation_timer = setTimeout(function () { Animation(dots + 1); }, 1000); // repeat animation every 1s
+    animation_timer = setTimeout(function() { Animation(dots + 1); }, 1000); // repeat animation every 1s
 }
 
 function SendKeyword() {
@@ -65,59 +64,63 @@ function SendKeyword() {
         type: 'POST', // method = POST
         dataType: 'text', // data = text
         data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
-        success:
-        function (result) {
+        success: function(result) {
             $('#news_feed').html(''); // remove all html inside div
             $('#news_feed').append(result); // append result to div
-            }
         }
-    );
+    });
 }
 
 $(document).ready( // when jQuery and HTML document has loaded
-    function () {
+    function() {
         ShowTime(); // show current time
 
         $('#updater').click( // when update button clicked
-            function () {
+            function() {
                 $('#message').text("Updating RSS"); // change status to updating
 
                 $.ajax({
                     url: '/Home/StartUpdate', // controller to handle ajax, /ControllerName/MethodName
                     type: 'POST', // HTTP method
                     success: // if server responds with HTTP 200 OK
-                        function () { // show update succeed
-                            var d = new Date();
-                            var h = d.getHours();
-                            var m = d.getMinutes();
+                        function() { // show update succeed
+                        var d = new Date();
+                        var h = d.getHours();
+                        var m = d.getMinutes();
 
-                            var hours = '';
-                            var minutes = '';
+                        var hours = '';
+                        var minutes = '';
 
-                            if (h < 10) hours += '0';
-                            hours += h;
+                        if (h < 10) hours += '0';
+                        hours += h;
 
-                            if (m < 10) minutes += '0';
-                            minutes += m;
+                        if (m < 10) minutes += '0';
+                        minutes += m;
 
-                            var s = "RSS updated. Last update on " + hours + ":" + minutes; // show message and last update time
-                            $('#message').text(s); // change update message
-                            clearTimeout(animation_timer); // stop animation
-                        },
+                        var s = "RSS updated. Last update on " + hours + ":" + minutes; // show message and last update time
+                        $('#message').text(s); // change update message
+                        clearTimeout(animation_timer); // stop animation
+                    },
                     error: // if server does not responds with HTTP 200 OK
-                        function () {
-                            $('#message').text("Unable to update RSS. Please try again later."); // show error message
-                            clearTimeout(animation_timer); // stop animation
-                            message_timer = setTimeout(ClearMessage, 3000); // hide message in 3s
-                        }
+                        function() {
+                        $('#message').text("Unable to update RSS. Please try again later."); // show error message
+                        clearTimeout(animation_timer); // stop animation
+                        message_timer = setTimeout(ClearMessage, 3000); // hide message in 3s
                     }
-                );
+                });
 
-                animation_timer = setTimeout(function () { Animation(1); }, 1000); // play animation in 1s
+                animation_timer = setTimeout(function() { Animation(1); }, 1000); // play animation in 1s
             }
         );
 
         $('#keyword').keyup(SendKeyword); // when keyword changes, search keyword
-        $('#algorithm').change(SendKeyword); // when algorithm changes, search keyword
+
+        $('.dropdown-item').click( // when dropdown clicked
+            function() {
+                $('#dropdown-button').text($(this).text()); // change text to selection name
+                $('#dropdown-button').append(" <span class=\"caret\"></span>"); // add arrow symbol
+                SendKeyword();
+            }
+        );
     }
 );

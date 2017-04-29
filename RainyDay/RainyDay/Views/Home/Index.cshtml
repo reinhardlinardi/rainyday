@@ -1,37 +1,46 @@
 ﻿<html>
 
 <head>
-    <meta charset="utf-8" />
-
-    <link rel="stylesheet" type="text/css" href="~/css/style.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="~/js/script.js"></script>
 
-    <title> RainyDay, your daily news solution. </title>
+    <title> Welcome to RainyDay! </title>
 </head>
 
-<body id="main">
-    <!-- This Script is from www.htmlfreecodes.com, Provided by: Mahmood Bina -->
-    <script type='text/javascript' src='http://m.free-codes.org/gh.php?id=2001'></script>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <span class="navbar-brand pull-left"><img src="~/css/umbrella_icon.png"></span>
+                <span class="navbar-brand">RainyDay</span>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="nav-item nav-link active">@Html.ActionLink("Home","Index","Home")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("Search", "Search", "Home")</li>
+                <li class="nav-item nav-link">@Html.ActionLink("About", "About", "Home")</li>
+            </ul>
 
-    <script type="text/javascript" src="http://htmlfreecodes.com/codes/rain.js"></script>
-    <a target="_blank" href="free-web-tools.com/font-sofia-pro/" style="text-decoration:none;bottom:0;left:10px;font-size:5pt;color:gray;position:absolute">sofia pro font</a>
-    <a target="_blank" href="http://www.htmlfreecodes.com" style="font-size: 8pt; text-decoration: none">Html Codes</a>
-    <ul class="menu">
-        <li class="menu_logo"><img src="~/images/rainyday30.png"></li>
-        <li class="active">@Html.ActionLink("Home", "Index", "Home")</li>
-        <li class="passive">@Html.ActionLink("Search", "Search", "Home")</li>
-        <li class="passive">@Html.ActionLink("About", "About", "Home")</li>
-        <li id="time"> Loading locale time... </li>
-    </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item"><span class="navbar-text" id="time">Loading locale time...</span></li>
+            </ul>
+        </div>
+    </nav>
 
-    <div align="center" vertical-align="middle">
-        <img class="logo" id="logo" src="~/images/rainyday100.png">
-        <img class="logo" src="~/images/rainyday_font.png">
+    <div class="container text-center">
+        <img src="~/css/umbrella.png" class="img-responsive" id="umbrella">
+        <h2 class="rainyday">RainyDay</h2>
+
+        <br>
+        <h4 class="description">Find out the world today. Right now, right here, with our real-time news search and news update.</h4>
+
+        <br>
+        <form action="Search.html"><button type="submit" class="btn btn-secondary" id="start">Get Started ⏩</button></form>
     </div>
-
-    <h3 id="subtitle"> Your daily news solution. </h3>
 </body>
 
 </html>
