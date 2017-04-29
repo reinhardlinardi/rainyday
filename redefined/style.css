@@ -12,6 +12,7 @@ body {
     background-image: url("rain.png");
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 
@@ -138,6 +139,30 @@ div div form.form-horizontal {
     font-family: "Geometria Light";
     color: black;
     padding-top: 20px;
+}
+
+div.panel {
+    /* Panel for news */
+    left: 10%;
+    width: 80%;
+    top: 10px;
+    bottom: 10px;
+    position: relative;
+}
+
+div.panel div.panel-body div.news-image {
+    display: block;
+    float: left;
+    width: 10%;
+    height: inherit;
+}
+
+div.panel div.panel-body p {
+    /* News content in panel body */
+    display: block;
+    float: left;
+    width: 90%;
+    height: inherit;
 }
 
 div.row.about-page {
