@@ -38,6 +38,13 @@ function ShowTime() {
 
 $(document).ready(
     function() {
-        ShowTime();
+        ShowTime(); // show current time
+
+        $('.dropdown-item').click( // when dropdown clicked
+            function() {
+                $('#dropdown-button').text($(this).text()); // change text to selection name
+                $('#dropdown-button').append(" <span class=\"caret\"></span>"); // add arrow symbol
+            }
+        );
     }
 );

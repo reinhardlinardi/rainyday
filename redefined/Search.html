@@ -30,6 +30,36 @@
             </ul>
         </div>
     </nav>
+
+    <div class="row">
+        <div class="col-md-3">
+            <img class="umbrella-form" src="umbrella.png">
+            <h2 class="rainyday-form">RainyDay</h2>
+        </div>
+        <div class="col-md-5">
+            <form class="form-horizontal">
+                <div class="input-group">
+                    <input type="text" class="form-control" id="keyword" placeholder="Type any keyword here">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" id="dropdown-button">KMP <span class="caret"></span></button>
+                        <ul class="dropdown-menu dropdown-menu-right">
+                            <li><a class="dropdown-item" href="#">KMP</a></li>
+                            <li><a class="dropdown-item" href="#">Boyer-Moore</a></li>
+                            <li><a class="dropdown-item" href="#">Regex</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-1">
+            <form class="form-horizontal">
+                <button type="button" class="btn btn-secondary" id="updater"></button>
+            </form>
+        </div>
+        <div class="col-md-3">
+            <h4 id="message">Ready.</h4>
+        </div>
+    </div>
 </body>
 
 </html>

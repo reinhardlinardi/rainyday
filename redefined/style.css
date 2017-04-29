@@ -73,7 +73,7 @@ nav div.container-fluid ul.nav.navbar-nav.navbar-right li.nav-item span.navbar-t
 }
 
 img.img-responsive {
-    /* All umbrella logo */
+    /* All umbrella logo except form */
     margin: 0 auto;
 }
 
@@ -96,7 +96,50 @@ div h4.description {
     border-style: none;
 }
 
-div.row {
+div img.umbrella-form {
+    /* Umbrella icon in form */
+    display: block;
+    float: left;
+    padding-left: 20px;
+}
+
+h2.rainyday-form {
+    /* RainyDay text */
+    display: block;
+    float: left;
+    font-family: "Geometria Light";
+    color: black;
+    padding-left: 10px;
+}
+
+div div form.form-horizontal {
+    /* Form */
+    padding-top: 20px;
+}
+
+#dropdown-button {
+    /* Dropdown button */
+    background-color: #00aaf0;
+}
+
+#updater {
+    /* Update button */
+    background-color: #82dcff;
+    background-image: url("sync.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 35px;
+    height: 35px;
+}
+
+#message {
+    /* Message */
+    font-family: "Geometria Light";
+    color: black;
+    padding-top: 20px;
+}
+
+div.row.about-page {
     /* Row container for umbrella icon, RainyDay, about RainyDay */
     margin-top: 12%;
 }
