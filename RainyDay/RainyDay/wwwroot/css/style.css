@@ -10,7 +10,7 @@
 
 body {
     background-image: url("rain.png");
-    background-size: cover;
+    background-size: initial;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -68,6 +68,9 @@ nav div.container-fluid ul.nav.navbar-nav.navbar-right li.nav-item span.navbar-t
     text-decoration: none;
 }
 
+
+/* Home page */
+
 .container {
     /* Logo container */
     padding-top: 6%;
@@ -96,6 +99,17 @@ div h4.description {
     color: white;
     border-style: none;
 }
+
+
+/* Common container for Search and About page */
+
+div.row {
+    /* Row container */
+    max-width: 100%;
+}
+
+
+/* Search page */
 
 div img.umbrella-form {
     /* Umbrella icon in form */
@@ -134,11 +148,18 @@ div div form.form-horizontal {
     height: 35px;
 }
 
-#message {
-    /* Message */
+#update-message {
+    /* Update message */
     font-family: "Geometria Light";
     color: black;
     padding-top: 20px;
+}
+
+#search-message {
+    /* Search message */
+    font-family: "Geometria Light";
+    color: black;
+    padding-top: 10px;
 }
 
 div.panel {
@@ -173,6 +194,15 @@ div.panel div.panel-body p {
     width: 80%;
     height: inherit;
 }
+
+div.panel div.panel-body p a {
+    /* Link in news content */
+    color: #00aaf0;
+    text-decoration: none;
+}
+
+
+/* About page */
 
 div.row.about-page {
     /* Row container for umbrella icon, RainyDay, about RainyDay */

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using System.Web.Script.Serialization;
 using System.Collections.Generic;
 using RainyDay.Models;
 
@@ -141,8 +140,8 @@ namespace RainyDay
     
         public int[] buildLast()
         {
-            int[] last = new int[128];
-            for (int i = 0; i < 128; i++)
+            int[] last = new int[65536];
+            for (int i = 0; i < 65536; i++)
                 last[i] = -1;
             for (int i = 0; i < pattern.Length; i++)
                 last[pattern[i]] = i;
@@ -152,6 +151,30 @@ namespace RainyDay
         /** Melakukan pencocokan pattern dengan string text menggunakan Boyer Moore. 
           */
         public int bmMatch()
+        {
+            int[] last = buildLast();
+            int m = pattern.Length;
+            int n = text.Length;
+            int skip = 0;
+            for (int i = 0; i < n - m; i += skip)
+            {
+                skip = 0;
+                for (int j = m - 1; j >= 0; j--)
+                {
+                    if (pattern[j] != text[i+j])
+                    {
+                        skip = Math.Max(1, j - last[text[i + j]]);
+                        break;
+                    }
+                }
+                if (skip == 0)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+        /*public int bmMatch()
         {
             int[] last = buildLast();
             int n = text.Length;
@@ -181,7 +204,7 @@ namespace RainyDay
             }
             while (i <= n - 1);
             return -1;
-        }
+        }*/
 
         /** Melakukan pencocokan pattern dengan string text menggunakan Regex. 
           */

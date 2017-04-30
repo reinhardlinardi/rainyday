@@ -215,8 +215,11 @@ namespace RainyDay.Controllers
                         news_html += news_list[index].content.Substring(display_start, display_end - display_start + 1); // add news content
                         news_html += "..."; // add triple dots
                     }
-
+                    
+                    news_html += "<br><br>"; // add a blank line
+                    news_html += "Link : <a href=\"" + news_list[index].link + "\" target=\"_blank\">" + news_list[index].link + "</a>"; // add link 
                     news_html += "</p></div>"; // end tag of news content
+
                     news_html += "\n</div>"; // end tag of panel body
                     news_html += "\n</div>"; // end tag of Bootstrap panel
                 }

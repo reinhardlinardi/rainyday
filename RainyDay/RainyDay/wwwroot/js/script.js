@@ -40,19 +40,19 @@ var message_timer;
 var animation_timer;
 
 function ResetMessage() {
-    $('#message').text("Ready"); // reset update messages
+    $('#update-message').text(""); // reset update messages
     clearTimeout(message_timer); // clear timeout
 }
 
-function Animation(dots, message) {
+function Animation(dots) {
     if (dots == 4) dots = 1;
 
-    var s = message;
+    var s = "Updating RSS";
     for (i = 1; i <= dots; i++) s += ".";
 
-    $('#message').text(s); // print updating message
+    $('#update-message').text(s); // print updating message
 
-    animation_timer = setTimeout(function() { Animation(dots + 1, message); }, 1000); // repeat animation every 1s
+    animation_timer = setTimeout(function() { Animation(dots + 1); }, 1000); // repeat animation every 1s
 }
 
 function SendKeyword() {
@@ -66,22 +66,22 @@ function SendKeyword() {
             dataType: 'text', // data = text
             data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
             success: function (result) {
-                $('#news_feed').html(''); // remove all html string from news_feed
-                $('#news_feed').append(result); // append html string into news_feed
-                clearTimeout(animation_timer); // stop animation
-                $('#message').text("Search completed"); // search completed
-                message_timer = setTimeout(ResetMessage, 3000); // hide message in 3s
+                $('#news-feed').html(''); // remove all html string from news_feed
+
+                if (result != "") $('#news-feed').append(result); // keyword found, append html string into news_feed
+                else
+                {
+                    var html_string = "<br><h4 class=\"text-center\" id=\"search-message\">No results.</h4>";
+                    $('#news-feed').append(html_string); // append html string into news_feed
+                }
             }
         });
-
-        animation_timer = setTimeout(function () { Animation(1, "Searching"); }, 1000);
     }
     else
     {
-        $('#message').text("Keyword is empty"); // show message
-        $('#news_feed').html(''); // remove all html string from news_feed
-        clearTimeout(animation_timer); // stop animation
-        message_timer = setTimeout(ResetMessage, 3000); // hide message in 3s
+        var html_string = "<br><h4 class=\"text-center\" id=\"search-message\">Keyword empty.</h4>";
+        $('#news-feed').html(''); // remove all html string from news_feed
+        $('#news-feed').append(html_string); // append html string into news_feed
     }
 }
 
@@ -91,7 +91,7 @@ $(document).ready( // when jQuery and HTML document has loaded
 
         $('#updater').click( // when update button clicked
             function() {
-                $('#message').text("Updating RSS"); // change status to updating
+                $('#update-message').text("Updating RSS"); // change status to updating
 
                 $.ajax({
                     url: '/Home/StartUpdate', // controller to handle ajax, /ControllerName/MethodName
@@ -112,24 +112,18 @@ $(document).ready( // when jQuery and HTML document has loaded
                             minutes += m;
                         
                             var s = "RSS updated on " + hours + ":" + minutes; // show message and last update time
-                            $('#message').text(s); // change update message
+                            $('#update-message').text(s); // change update message
                             clearTimeout(animation_timer); // stop animation
                         },
                     error: // if server does not responds with HTTP 200 OK
                         function() {
-                            $('#message').text("Unable to update RSS."); // show error message
+                            $('#update-message').text("Unable to update RSS."); // show error message
                             clearTimeout(animation_timer); // stop animation
                             message_timer = setTimeout(ResetMessage, 3000); // hide message in 3s
                         }
                 });
 
-                animation_timer = setTimeout(function() { Animation(1, "Updating RSS"); }, 1000); // play animation in 1s
-            }
-        );
-
-        $('#keyword').keyup( // when user types something
-            function () {
-                $('#message').text("Remove focus to search."); // show hint
+                animation_timer = setTimeout(function() { Animation(1); }, 1000); // play animation in 1s
             }
         );
 
