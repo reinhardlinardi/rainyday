@@ -44,34 +44,45 @@ function ResetMessage() {
     clearTimeout(message_timer); // clear timeout
 }
 
-function Animation(dots) {
+function Animation(dots, message) {
     if (dots == 4) dots = 1;
 
-    var s = "Updating RSS";
+    var s = message;
     for (i = 1; i <= dots; i++) s += ".";
 
     $('#message').text(s); // print updating message
 
-    animation_timer = setTimeout(function() { Animation(dots + 1); }, 1000); // repeat animation every 1s
+    animation_timer = setTimeout(function() { Animation(dots + 1, message); }, 1000); // repeat animation every 1s
 }
 
 function SendKeyword() {
     var keyword_val = $('#keyword').val(); // get value of keyword
     var algorithm_val = $('#dropdown-button').val(); // get value of algorithm
 
-    console.log(algorithm_val);
-    /*
-    $.ajax({
-        url: '/Home/SearchKeyword', // send to Home Controller, method SearchKeyword
-        type: 'POST', // method = POST
-        dataType: 'text', // data = text
-        data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
-        success: function(result) {
-            //$('#news_feed').html(''); // remove all html inside div
-            //$('#news_feed').append(result); // append result to div
-        }
-    });
-    */
+    if (keyword_val != "") {
+        $.ajax({
+            url: '/Home/SearchKeyword', // send to Home Controller, method SearchKeyword
+            type: 'POST', // method = POST
+            dataType: 'text', // data = text
+            data: { keyword: keyword_val, algorithm: algorithm_val }, // key = parameter name, value = value
+            success: function (result) {
+                $('#news_feed').html(''); // remove all html string from news_feed
+                $('#news_feed').append(result); // append html string into news_feed
+                clearTimeout(animation_timer); // stop animation
+                $('#message').text("Search completed"); // search completed
+                message_timer = setTimeout(ResetMessage, 3000); // hide message in 3s
+            }
+        });
+
+        animation_timer = setTimeout(function () { Animation(1, "Searching"); }, 1000);
+    }
+    else
+    {
+        $('#message').text("Keyword is empty"); // show message
+        $('#news_feed').html(''); // remove all html string from news_feed
+        clearTimeout(animation_timer); // stop animation
+        message_timer = setTimeout(ResetMessage, 3000); // hide message in 3s
+    }
 }
 
 $(document).ready( // when jQuery and HTML document has loaded
@@ -87,23 +98,23 @@ $(document).ready( // when jQuery and HTML document has loaded
                     type: 'POST', // HTTP method
                     success: // if server responds with HTTP 200 OK
                         function() { // show update succeed
-                        var d = new Date();
-                        var h = d.getHours();
-                        var m = d.getMinutes();
+                            var d = new Date();
+                            var h = d.getHours();
+                            var m = d.getMinutes();
 
-                        var hours = '';
-                        var minutes = '';
+                            var hours = '';
+                            var minutes = '';
 
-                        if (h < 10) hours += '0';
-                        hours += h;
+                            if (h < 10) hours += '0';
+                            hours += h;
 
-                        if (m < 10) minutes += '0';
-                        minutes += m;
+                            if (m < 10) minutes += '0';
+                            minutes += m;
                         
-                        var s = "RSS updated on " + hours + ":" + minutes; // show message and last update time
-                        $('#message').text(s); // change update message
-                        clearTimeout(animation_timer); // stop animation
-                    },
+                            var s = "RSS updated on " + hours + ":" + minutes; // show message and last update time
+                            $('#message').text(s); // change update message
+                            clearTimeout(animation_timer); // stop animation
+                        },
                     error: // if server does not responds with HTTP 200 OK
                         function() {
                             $('#message').text("Unable to update RSS."); // show error message
@@ -112,18 +123,24 @@ $(document).ready( // when jQuery and HTML document has loaded
                         }
                 });
 
-                animation_timer = setTimeout(function() { Animation(1); }, 1000); // play animation in 1s
+                animation_timer = setTimeout(function() { Animation(1, "Updating RSS"); }, 1000); // play animation in 1s
             }
         );
 
-        $('#keyword').keyup(SendKeyword); // when keyword changes, search keyword
+        $('#keyword').keyup( // when user types something
+            function () {
+                $('#message').text("Remove focus to search."); // show hint
+            }
+        );
 
-        $('.dropdown-item').click( // when dropdown clicked
+        $('#keyword').change(SendKeyword); // when keyword changes, search keyword
+
+        $('.dropdown-item').click( // when dropdown selection clicked
             function() {
                 $('#dropdown-button').text($(this).text()); // change text to selection name
                 $('#dropdown-button').append(" <span class=\"caret\"></span>"); // add arrow symbol
                 $('#dropdown-button').val($(this).text()); // change value to selection name
-                SendKeyword();
+                SendKeyword(); // search keyword
             }
         );
     }
