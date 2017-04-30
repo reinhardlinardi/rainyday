@@ -93,6 +93,9 @@ namespace RainyDay
                     else break;
                 }
             }
+
+            NewsSorter news_sorter = new NewsSorter();
+            raw_news_list.Sort(news_sorter);
         }
 
         public void ParseHTML()

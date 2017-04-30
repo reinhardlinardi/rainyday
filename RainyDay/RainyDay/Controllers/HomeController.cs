@@ -58,7 +58,7 @@ namespace RainyDay.Controllers
 
         public string FormatDate(string date)
         {
-            //Sun, 30 Apr 2017 00:14:01 + 0700
+            // RSS Date : Sun, 30 Apr 2017 00:14:01 + 0700
             Match matcher;
             string formatted_date = "";
 
