@@ -184,9 +184,8 @@ namespace RainyDay.Controllers
                     news_html += "\n<div class=\"panel panel-default\">"; // add Bootstrap panel
 
                     // add news title and date in panel heading
-                    news_html += "\n<div class=\"panel-heading\">" + news_list[index].title;
-                    for (int i = 1; i <= 12; i++) news_html += "&nbsp;";
-                    news_html += FormatDate(news_list[index].date) + "</div>";
+                    news_html += "\n<div class=\"panel-heading\"><span class=\"text-right\">" + news_list[index].title + "</span>";
+                    news_html += "<span class=\"pull-right\">" + FormatDate(news_list[index].date) + "</span></div>";
 
                     news_html += "\n<div class=\"panel-body\">"; // add panel body
                     news_html += "\n<div class=\"news-image\"><img src=\"" + news_list[index].image + "\" alt=\"(No Image)\"></div>"; // add image link
